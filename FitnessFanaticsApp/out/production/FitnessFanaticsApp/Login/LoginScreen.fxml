@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginScreenController">
+   <children>
+      <TextField fx:id="input_username" layoutX="421.0" layoutY="342.0" prefHeight="27.0" prefWidth="211.0" promptText="Username" />
+      <PasswordField fx:id="input_password" layoutX="421.0" layoutY="383.0" prefHeight="27.0" prefWidth="211.0" promptText="Password" />
+      <Button layoutX="527.0" layoutY="432.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="27.0" prefWidth="101.0" text="Login" />
+      <Button layoutX="389.0" layoutY="432.0" mnemonicParsing="false" onAction="#handleSignUpButtonAction" prefHeight="27.0" prefWidth="110.0" text="Sign Up" />
+      <Label fx:id="loginStatusLabel" layoutX="334.0" layoutY="493.0" prefHeight="17.0" prefWidth="353.0" textAlignment="CENTER" />
+      <ImageView fitHeight="225.0" fitWidth="198.0" layoutX="411.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/logoOne.png" />
+         </image></ImageView>
+      <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="382.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/icon_person.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="30.0" layoutX="382.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/icon_lock.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
