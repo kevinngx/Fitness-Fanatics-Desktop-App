@@ -11,16 +11,19 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import sample.Database;
 import sample.PageSwitcherHelper;
 import sample.SessionDataHolder;
 import sample.User;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 
 public class SignUpScreenTwoController {
     private static final String TAG = "SignUpScreenTwoController: ";
 
     private PageSwitcherHelper pageSwitcherHelper = new PageSwitcherHelper();
+    Database database = new Database();
     private User newUser;
 
     @FXML TextField input_email;
@@ -75,6 +78,22 @@ public class SignUpScreenTwoController {
         }
 
         // Check if email is unique
+        String query = "SELECT * FROM UserData \n" +
+                "WHERE username = \"" + input_email.getText() + "\"";
+
+        try {
+            ResultSet rs = database.getResultSet(query);
+            if (rs.next()) {
+                System.out.println(TAG + "Email found, with user: " + rs.getString(3));
+                signupStatusLabel.setTextFill(Color.RED);
+                signupStatusLabel.setText("Email is already in use.");
+                return false;
+            }
+            rs.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
         return true;
     }
 

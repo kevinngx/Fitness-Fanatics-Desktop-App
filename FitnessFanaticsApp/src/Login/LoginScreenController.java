@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sample.Database;
 import sample.PageSwitcherHelper;
+import sample.SessionDataHolder;
 import sample.User;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class LoginScreenController {
         if (findUser(input_username.getText())) {
             if (authenticateUser(input_password.getText())) {
                 updateLabel(Login_Status.LOGIN_SUCCESSFUL);
-                //TODO proceed to dashboard upon successful authentication
+                pageSwitcherHelper.switcher(event, "../Dashboard/DashboardLandingPage.fxml");
             } else {
                 updateLabel(Login_Status.INCORRECT_PASSWORD);
             }
@@ -87,6 +88,7 @@ public class LoginScreenController {
     private boolean authenticateUser(String inputPassword) {
         if (inputPassword.equals(currentUser.getPassword())) {
             System.out.println(TAG + "User authenticated, signing in...");
+            SessionDataHolder.user = currentUser;
             return true;
         }
         System.out.println(TAG + "Incorrect Password");
@@ -95,13 +97,7 @@ public class LoginScreenController {
 
     @FXML
     private void handleSignUpButtonAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../SignUp/SignUpScreenOne.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
-        Stage stage = new Stage();
-        stage.setTitle("Sign Up");
-        stage.setScene(scene);
-        stage.show();
+        pageSwitcherHelper.switcher(event, "../SignUp/SignUpScreenOne.fxml");
     }
 
     // returns true if input is valid

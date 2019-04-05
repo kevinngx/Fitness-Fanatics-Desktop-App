@@ -5,20 +5,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import sample.DateHelper;
-import sample.PageSwitcherHelper;
-import sample.SessionDataHolder;
-import sample.User;
+import sample.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class SignUpScreenFiveController {
     private static final String TAG = "SignUpScreenFiveController: ";
 
     private PageSwitcherHelper pageSwitcherHelper = new PageSwitcherHelper();
+    Database database = new Database();
     private User newUser;
-
-    @FXML DatePicker input_dateOfBirth;
 
     @FXML Label confirmation_username;
     @FXML Label confirmation_email;
@@ -32,6 +29,7 @@ public class SignUpScreenFiveController {
 
     @FXML
     public void initialize() {
+        System.out.println(TAG + "Initialized");
         newUser = SessionDataHolder.getUser();
         System.out.println(newUser.toString());
         confirmation_username.setText(newUser.getUsername());
@@ -39,7 +37,6 @@ public class SignUpScreenFiveController {
         confirmation_name.setText(newUser.getFirstName() + " " + newUser.getLastName());
         confirmation_gender.setText(newUser.getGender());
         confirmation_height.setText(Double.toString(newUser.getHeight()) + "cm");
-        // Fix Weight
         confirmation_weight.setText(Double.toString(newUser.getWeight()) + "kg");
         confirmation_bodyFatPercentage.setText(Double.toString(newUser.getBodyFatPercentage()) + "%");
         confirmation_dateOfBirth.setText(DateHelper.longDateToString(newUser.getDateOfBirth()));
@@ -47,13 +44,21 @@ public class SignUpScreenFiveController {
     }
 
     @FXML
-    Label signupStatusLabel;
-
-    @FXML
     private void handleNextButtonAction(ActionEvent event) throws IOException {
         System.out.println(TAG + "Next button pressed");
-        //Todo: SQL Query to create new record and insert into database
-
+        String query = String.format("INSERT INTO \"UserData\" (\"email\",\"username\",\"password\"," +
+                "\"firstName\",\"lastName\",\"gender\",\"bodyFatPercentage\",\"weight\",\"height\",\"dateOfBirth\") " +
+                "VALUES ('%s','%s','%s','%s','%s','%s',%s,%s,%s,%s);",
+                newUser.getEmail(), newUser.getUsername(), newUser.getPassword(), newUser.getFirstName(),
+                newUser.getLastName(), newUser.getGender(), newUser.getBodyFatPercentage(),
+                newUser.getWeight(), newUser.getHeight(), newUser.getDateOfBirth());
+        System.out.println(TAG + "generated query: " + query);
+        try {
+            database.insertStatement(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        pageSwitcherHelper.switcher(event, "../Login/LoginScreen.fxml");
     }
 
 

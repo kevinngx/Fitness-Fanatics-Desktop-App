@@ -1,0 +1,26 @@
+.parent {
+    -fx-background-color: #fff;
+}
+
+.sidebar {
+    -fx-background-color: #333645;
+}
+
+.dashboardBbtns {
+    -fx-background-color: transparent;
+}
+
+.dashboardBbtns:hover {
+    -fx-background-color: #202332;
+}
+
+.btn {
+    -fx-background-color:  #00A2D3;
+    -fx-background-radius: 0;
+}
+
+
+.box {
+    -fx-border-color: #7C8184;
+    -fx-border-width: 1px 0px 0px 0px;
+}
