@@ -41,7 +41,7 @@ public class LoginScreenController {
         if (findUser(input_username.getText())) {
             if (authenticateUser(input_password.getText())) {
                 updateLabel(Login_Status.LOGIN_SUCCESSFUL);
-                pageSwitcherHelper.switcher(event, "../Dashboard/DashboardLandingPage.fxml");
+                pageSwitcherHelper.switcher(event, "../Application/Dashboard.fxml");
             } else {
                 updateLabel(Login_Status.INCORRECT_PASSWORD);
             }

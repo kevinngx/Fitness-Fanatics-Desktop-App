@@ -38,6 +38,7 @@ public class DateHelper {
             sb.append('0');
         }
         sb.append(day);
+        System.out.println("Output: " + sb.toString());
         return Long.parseLong(sb.toString());
 
     }

@@ -38,16 +38,15 @@ public class SignUpScreenThreeController {
 
     @FXML
     public void initialize() {
-        //setup spinner
+        //setup spinners
         SpinnerValueFactory<Double> heightValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 300.0, 150.0);
         this.input_height.setValueFactory(heightValueFactory);
 
-        //setup spinner
         SpinnerValueFactory<Double> weightValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 300.0, 75.0);
         this.input_weight.setValueFactory(weightValueFactory);
 
         SpinnerValueFactory<Double> bodyFatPercentageValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 100.0, 20.0);
-        this.input_bodyFatPercentage.setValueFactory(bodyFatPercentageValueFactory );
+        this.input_bodyFatPercentage.setValueFactory(bodyFatPercentageValueFactory);
 
         newUser = SessionDataHolder.getUser();
         confirmation_username.setText(newUser.getUsername());

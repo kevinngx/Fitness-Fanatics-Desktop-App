@@ -58,7 +58,7 @@ public class SignUpScreenFiveController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        pageSwitcherHelper.switcher(event, "../Login/LoginScreen.fxml");
+        pageSwitcherHelper.switcher(event, "../SignUp/SignUpSuccess.fxml");
     }
 
 

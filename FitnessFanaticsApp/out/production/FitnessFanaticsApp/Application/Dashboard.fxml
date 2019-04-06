@@ -12,22 +12,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1022.0" styleClass="parent" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard.DashboardController">
+<AnchorPane prefHeight="600.0" prefWidth="1022.0" styleClass="parent" stylesheets="@../css/stylesheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.DashboardController">
    <children>
       <VBox prefHeight="600.0" prefWidth="300.0" styleClass="sidebar" stylesheets="@../css/stylesheet.css">
          <children>
-            <Label prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #00A2D3; -fx-alignment: ;" text="User Dashboard" textFill="WHITE">
+            <Label fx:id="current_user" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: #00A2D3;" text="USER_NAME" textFill="WHITE">
                <padding>
                   <Insets left="10.0" />
                </padding>
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <HBox minHeight="50.0" onMouseClicked="#backToLogin" prefWidth="200.0" styleClass="dashboardBbtns">
+            <HBox fx:id="navigation_dashboard" minHeight="50.0" onMouseClicked="#onDashboardButtonClick" prefWidth="200.0" styleClass="dashboardBbtns">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icon_person.png" />
+                        <Image url="@../Assets/icon_dashboard.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="18.0" />
@@ -49,17 +49,17 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
-            <HBox minHeight="50.0" prefWidth="200.0" styleClass="dashboardBbtns">
+            <HBox minHeight="50.0" onMouseClicked="#onDailyStatsButtonClick" prefWidth="200.0" styleClass="dashboardBbtns">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icon_person.png" />
+                        <Image url="@../Assets/icon_dailyData.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="18.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label prefHeight="35.0" text="Daily Stats" textFill="#7c8184">
+                  <Label fx:id="navigation_dailyStats" prefHeight="35.0" text="Daily Stats" textFill="#7c8184">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -75,17 +75,17 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
-            <HBox minHeight="50.0" prefWidth="200.0" styleClass="dashboardBbtns">
+            <HBox fx:id="navigation_foodDiary" minHeight="50.0" onMouseClicked="#onFoodDiaryButtonClick" prefWidth="200.0" styleClass="dashboardBbtns">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icon_person.png" />
+                        <Image url="@../Assets/icon_foodDiary.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="18.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label prefHeight="35.0" text="Food" textFill="#7c8184">
+                  <Label prefHeight="35.0" text="Food Diary" textFill="#7c8184">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -101,17 +101,17 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
-            <HBox minHeight="50.0" prefWidth="200.0" styleClass="dashboardBbtns">
+            <HBox fx:id="navigation_activityLog" minHeight="50.0" onMouseClicked="#onActivityLogButtonClick" prefWidth="200.0" styleClass="dashboardBbtns">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icon_person.png" />
+                        <Image url="@../Assets/icon_dailyData.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="18.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Label prefHeight="35.0" text="Activity" textFill="#7c8184">
+                  <Label prefHeight="35.0" text="Activity Log" textFill="#7c8184">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -127,17 +127,43 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
-            <HBox minHeight="50.0" prefWidth="200.0" styleClass="dashboardBbtns">
+            <HBox minHeight="50.0" onMouseClicked="#onHealthCheckClick" prefWidth="200.0" styleClass="dashboardBbtns">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icon_person.png" />
+                        <Image url="@../Assets/icon_healthCheck.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" top="18.0" />
                      </HBox.margin>
                   </ImageView>
                   <Label prefHeight="35.0" text="Health Check" textFill="#7c8184">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox minHeight="50.0" onMouseClicked="#onAccountSettingsClick" prefWidth="200.0" styleClass="dashboardBbtns">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icon_accountSettings.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" top="18.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="35.0" text="Account Settings" textFill="#7c8184">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -162,16 +188,25 @@
                   <DropShadow blurType="ONE_PASS_BOX" />
                </effect>
                <children>
-                  <Label layoutX="36.0" layoutY="27.0" text="Dashboard" textFill="#7c8184">
+                  <Label fx:id="page_title" layoutX="36.0" layoutY="23.0" text="PAGE_TITLE" textFill="#7c8184">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="571.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="129.0" styleClass="btn" text="Button" textFill="WHITE">
+                  <Button fx:id="button_logout" layoutX="614.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="40.0" prefWidth="86.0" styleClass="btn" text="Logout" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icon_person.png" />
+                              <Image url="@../Assets/icon_logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="button_home" layoutX="507.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="40.0" prefWidth="86.0" styleClass="btn" text="Home" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icon_dashboardWhite.png" />
                            </image>
                         </ImageView>
                      </graphic>

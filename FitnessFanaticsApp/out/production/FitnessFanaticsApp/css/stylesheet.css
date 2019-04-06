@@ -19,8 +19,28 @@
     -fx-background-radius: 0;
 }
 
+.btn:hover {
+    -fx-background-color: #000000;
+}
+
 
 .box {
     -fx-border-color: #7C8184;
     -fx-border-width: 1px 0px 0px 0px;
+}
+
+.datePicker {
+
+}
+
+.spinner {
+
+}
+
+.inputLabel {
+
+}
+
+.pageMessage {
+
 }
