@@ -259,12 +259,12 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="36.0" layoutY="184.0" prefHeight="50.0" prefWidth="59.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Gym Sleep" wrapText="true">
+                  <Label layoutX="36.0" layoutY="184.0" prefHeight="50.0" prefWidth="59.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Gym (mins)" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="36.0" layoutY="121.0" prefHeight="50.0" prefWidth="59.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Hours Sleep" wrapText="true">
+                  <Label layoutX="36.0" layoutY="121.0" prefHeight="50.0" prefWidth="59.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Sleep (mins)" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
