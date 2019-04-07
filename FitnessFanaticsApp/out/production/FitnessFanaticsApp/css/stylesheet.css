@@ -27,6 +27,10 @@
     -fx-background-color: #000000;
 }
 
+.btnSelected {
+    -fx-background-color: #000000;
+}
+
 
 .box {
     -fx-border-color: #7C8184;

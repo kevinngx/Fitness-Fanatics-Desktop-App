@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -220,12 +221,55 @@
                   <DatePicker fx:id="date_selection" editable="false" layoutX="186.0" layoutY="42.0" promptText="Select a date to query" styleClass="datePicker" stylesheets="@../css/stylesheet.css" />
                   <Button fx:id="button_getData" layoutX="418.0" layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGetDataButtonClick" prefHeight="40.0" prefWidth="86.0" styleClass="btn" text="Get Data" textFill="WHITE" />
                   <Line endX="521.0" layoutX="156.0" layoutY="96.0" startX="-100.0" stroke="#333645" />
-                  <Button fx:id="button_getData1212" layoutX="46.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGetDataButtonClick" prefHeight="27.0" prefWidth="169.0" styleClass="btn" text="Resistance Exercises" textFill="WHITE" />
+                  <Button layoutX="46.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#resistanceExerciseButtonClick" prefHeight="27.0" prefWidth="169.0" styleClass="btn" text="Resistance Exercises" textFill="WHITE" />
                   <Line endX="100.0" layoutX="130.0" layoutY="303.0" startX="-100.0" stroke="#333645" />
-                  <Button fx:id="button_getData12121" layoutX="277.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGetDataButtonClick" prefHeight="27.0" prefWidth="169.0" styleClass="btn" text="Aerobic Exercise" textFill="WHITE" />
+                  <Button layoutX="277.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AerobicExerciseButtonClick" prefHeight="27.0" prefWidth="169.0" styleClass="btn" text="Aerobic Exercise" textFill="WHITE" />
                   <Line endX="100.0" layoutX="361.0" layoutY="303.0" startX="-100.0" stroke="#333645" />
-                  <Button fx:id="button_getData121211" layoutX="509.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGetDataButtonClick" prefHeight="27.0" prefWidth="169.0" styleClass="btn" text="Mental Exercise" textFill="WHITE" />
+                  <Button layoutX="509.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#MentalExerciseButtonClick" prefHeight="27.0" prefWidth="169.0" styleClass="btn" text="Mental Exercise" textFill="WHITE" />
                   <Line endX="100.0" layoutX="593.0" layoutY="303.0" startX="-100.0" stroke="#333645" />
+                  <Label layoutX="247.0" layoutY="134.0" prefHeight="18.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Resistance Exercise">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="271.0" layoutY="168.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Aerobic Exercise">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="273.0" layoutY="206.0" prefHeight="18.0" prefWidth="106.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Mental Exercise">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="value_resistanceExerciseTime" layoutX="397.0" layoutY="134.0" text="xxx" />
+                  <Label fx:id="value_aerobicExerciseTime" layoutX="397.0" layoutY="168.0" text="xxx" />
+                  <Label fx:id="value_mentalExerciseTime" layoutX="397.0" layoutY="206.0" text="xxx" />
+                  <Label fx:id="value_gymTime" layoutX="136.0" layoutY="195.0" text="xxx">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="value_sleepTime" layoutX="134.0" layoutY="131.0" text="xxx">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="184.0" prefHeight="50.0" prefWidth="59.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Gym Sleep" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="121.0" prefHeight="50.0" prefWidth="59.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Hours Sleep" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="192.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sleepPlusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="+" textFill="WHITE" />
+                  <Button layoutX="96.0" layoutY="132.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sleepMinusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="-" textFill="WHITE" />
+                  <Button layoutX="191.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#gymPlusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="+" textFill="WHITE" />
+                  <Button layoutX="96.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#gymMinusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="-" textFill="WHITE" />
+                  <PieChart fx:id="chart_timeAllocation" layoutX="468.0" layoutY="110.0" prefHeight="135.0" prefWidth="147.0" title="Time Allocation" />
                </children>
             </AnchorPane>
          </children></VBox>

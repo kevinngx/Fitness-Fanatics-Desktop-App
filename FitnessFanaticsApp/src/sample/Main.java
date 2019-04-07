@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 //        Parent root = FXMLLoader.load(getClass().getResource("../Login/LoginScreen.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("../Application/FoodDiary.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Application/ActivityLog.fxml"));
 
 
         primaryStage.setTitle("Fitness Fanatics");
