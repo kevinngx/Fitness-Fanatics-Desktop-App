@@ -282,15 +282,17 @@
                         <TableColumn fx:id="column_time" prefWidth="109.0" text="Time Taken" />
                     </columns>
                   </TableView>
-                  <Button layoutX="610.0" layoutY="475.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewEntryButton" prefHeight="27.0" prefWidth="73.0" styleClass="btn" text="+" textFill="WHITE" />
-                  <TextField fx:id="input_description" layoutX="34.0" layoutY="475.0" prefHeight="27.0" prefWidth="264.0" promptText="Exercise Description" />
-                  <Spinner fx:id="input_time" layoutX="509.0" layoutY="474.0" prefHeight="27.0" prefWidth="73.0" />
-                  <Spinner fx:id="input_sets" layoutX="411.0" layoutY="474.0" prefHeight="27.0" prefWidth="73.0" />
-                  <Spinner fx:id="input_mass" layoutX="316.0" layoutY="475.0" prefHeight="27.0" prefWidth="73.0" />
+                  <Button layoutX="498.0" layoutY="473.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewEntryButton" prefHeight="27.0" prefWidth="61.0" styleClass="btn" text="+" textFill="WHITE" />
+                  <TextField fx:id="input_description" layoutX="34.0" layoutY="475.0" prefHeight="27.0" prefWidth="224.0" promptText="Exercise Description" />
+                  <Spinner fx:id="input_time" editable="true" layoutX="415.0" layoutY="473.0" prefHeight="27.0" prefWidth="73.0" />
+                  <Spinner fx:id="input_sets" editable="true" layoutX="337.0" layoutY="474.0" prefHeight="27.0" prefWidth="73.0" />
+                  <Spinner fx:id="input_mass" editable="true" layoutX="261.0" layoutY="474.0" prefHeight="27.0" prefWidth="73.0" />
                   <Label layoutX="39.0" layoutY="451.0" text="Exercse Description" />
-                  <Label layoutX="318.0" layoutY="451.0" text="Mass (kg)" />
-                  <Label layoutX="413.0" layoutY="450.0" text="Sets (#)" />
-                  <Label layoutX="509.0" layoutY="450.0" text="Time (mins)" />
+                  <Label layoutX="263.0" layoutY="450.0" text="Mass (kg)" />
+                  <Label layoutX="339.0" layoutY="450.0" text="Sets (#)" />
+                  <Label layoutX="415.0" layoutY="449.0" text="Time (mins)" />
+                  <Button fx:id="button_addNewMealItem1" layoutX="568.0" layoutY="472.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDeleteSelected" prefHeight="29.0" prefWidth="123.0" styleClass="btn" text="Delete Selected" textFill="WHITE" />
+                  <Label fx:id="label_warningMessage" layoutX="498.0" layoutY="506.0" />
                </children>
             </AnchorPane>
          </children></VBox>

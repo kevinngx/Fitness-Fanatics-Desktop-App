@@ -4,13 +4,15 @@ import java.sql.SQLException;
 
 public class AerobicExercise {
 
+    int exerciseId;
     int userId;
     long date;
     String exercise;
     int distance;
     int time;
 
-    public AerobicExercise(int userId, long date, String exercise, int distance, int time) {
+    public AerobicExercise(int exerciseId, int userId, long date, String exercise, int distance, int time) {
+        this.exerciseId = exerciseId;
         this.userId = userId;
         this.date = date;
         this.exercise = exercise;
@@ -59,6 +61,14 @@ public class AerobicExercise {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public int getExerciseId() {
+        return exerciseId;
+    }
+
+    public void setExerciseId(int exerciseId) {
+        this.exerciseId = exerciseId;
     }
 
     @Override

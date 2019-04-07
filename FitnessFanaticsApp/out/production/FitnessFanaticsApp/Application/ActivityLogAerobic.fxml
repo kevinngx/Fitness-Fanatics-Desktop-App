@@ -281,13 +281,15 @@
                         <TableColumn fx:id="column_time" prefWidth="165.0" text="Time Taken" />
                      </columns>
                   </TableView>
-                  <Spinner fx:id="input_time" layoutX="501.0" layoutY="487.0" prefHeight="27.0" prefWidth="87.0" />
-                  <Label layoutX="501.0" layoutY="462.0" text="Time (mins)" />
-                  <Spinner fx:id="input_distance" layoutX="397.0" layoutY="486.0" prefHeight="27.0" prefWidth="86.0" />
-                  <Label layoutX="401.0" layoutY="462.0" text="Distance (m)" />
-                  <Button layoutX="612.0" layoutY="487.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewEntryButton" prefHeight="27.0" prefWidth="73.0" styleClass="btn" text="+" textFill="WHITE" />
-                  <TextField fx:id="input_description" layoutX="52.0" layoutY="487.0" prefHeight="27.0" prefWidth="324.0" promptText="Exercise Description" />
+                  <Spinner fx:id="input_time" editable="true" layoutX="382.0" layoutY="485.0" prefHeight="27.0" prefWidth="87.0" />
+                  <Label layoutX="382.0" layoutY="460.0" text="Time (mins)" />
+                  <Spinner fx:id="input_distance" editable="true" layoutX="283.0" layoutY="485.0" prefHeight="27.0" prefWidth="86.0" />
+                  <Label layoutX="287.0" layoutY="461.0" text="Distance (m)" />
+                  <Button layoutX="482.0" layoutY="486.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewEntryButton" prefHeight="27.0" prefWidth="73.0" styleClass="btn" text="+" textFill="WHITE" />
+                  <TextField fx:id="input_description" layoutX="52.0" layoutY="487.0" prefHeight="27.0" prefWidth="218.0" promptText="Exercise Description" />
                   <Label layoutX="58.0" layoutY="462.0" text="Exercise Description" />
+                  <Button fx:id="button_addNewMealItem1" layoutX="568.0" layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDeleteSelected" prefHeight="29.0" prefWidth="117.0" styleClass="btn" text="Delete Selected" textFill="WHITE" />
+                  <Label fx:id="label_warningMessage" layoutX="483.0" layoutY="513.0" />
                </children>
             </AnchorPane>
          </children></VBox>

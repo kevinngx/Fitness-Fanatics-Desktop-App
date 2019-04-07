@@ -275,15 +275,15 @@
                   <Button layoutX="191.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#gymPlusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="+" textFill="WHITE" />
                   <Button layoutX="96.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#gymMinusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="-" textFill="WHITE" />
                   <PieChart fx:id="chart_timeAllocation" layoutX="468.0" layoutY="110.0" prefHeight="135.0" prefWidth="147.0" title="Time Allocation" />
-                  <Button layoutX="605.0" layoutY="477.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewEntryButton" prefHeight="27.0" prefWidth="73.0" styleClass="btn" text="+" textFill="WHITE" />
-                  <TextField fx:id="input_description" layoutX="42.0" layoutY="477.0" prefHeight="27.0" prefWidth="264.0" promptText="Exercise Description" />
-                  <Spinner fx:id="input_time" layoutX="505.0" layoutY="477.0" prefHeight="27.0" prefWidth="73.0" />
+                  <Button layoutX="481.0" layoutY="476.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewEntryButton" prefHeight="27.0" prefWidth="52.0" styleClass="btn" text="+" textFill="WHITE" />
+                  <TextField fx:id="input_description" layoutX="42.0" layoutY="477.0" prefHeight="27.0" prefWidth="185.0" promptText="Exercise Description" />
+                  <Spinner fx:id="input_time" editable="true" layoutX="397.0" layoutY="476.0" prefHeight="27.0" prefWidth="73.0" />
                   <Label layoutX="48.0" layoutY="452.0" text="Exercise Description" />
-                  <Label layoutX="333.0" layoutY="452.0" text="How do you feel?" />
-                  <Label layoutX="505.0" layoutY="452.0" text="Time (mins)" />
-                  <Slider fx:id="input_emotionalRating" layoutX="337.0" layoutY="477.0" />
-                  <Label layoutX="333.0" layoutY="496.0" text="Bad" />
-                  <Label layoutX="445.0" layoutY="496.0" text="Good" />
+                  <Label layoutX="236.0" layoutY="452.0" text="How do you feel?" />
+                  <Label layoutX="397.0" layoutY="451.0" text="Time (mins)" />
+                  <Slider fx:id="input_emotionalRating" layoutX="240.0" layoutY="477.0" />
+                  <Label layoutX="236.0" layoutY="496.0" text="Bad" />
+                  <Label layoutX="348.0" layoutY="496.0" text="Good" />
                   <TableView fx:id="table_summary" layoutX="53.0" layoutY="314.0" prefHeight="126.0" prefWidth="609.0">
                     <columns>
                       <TableColumn fx:id="column_exercise" prefWidth="349.0" text="Exercise" />
@@ -291,6 +291,8 @@
                         <TableColumn fx:id="column_time" prefWidth="139.0" text="Time Spent" />
                     </columns>
                   </TableView>
+                  <Button fx:id="button_addNewMealItem1" layoutX="545.0" layoutY="475.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDeleteSelected" prefHeight="29.0" prefWidth="117.0" styleClass="btn" text="Delete Selected" textFill="WHITE" />
+                  <Label fx:id="label_warningMessage" layoutX="481.0" layoutY="505.0" />
                </children>
             </AnchorPane>
          </children></VBox>

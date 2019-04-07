@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 import sample.DateHelper;
 import sample.FoodIntake;
 import sample.SessionDataHolder;
@@ -27,6 +28,9 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
     enum Query_Type {ALL, MEAL_TIME, FOOD_GROUP}
     ArrayList<FoodIntake> foodItems;
 
+    private Query_Type currentType = Query_Type.ALL;
+    private String currentParamter = "ALL";
+
     @FXML Label value_carbAmount;
     @FXML Label value_carbCalories;
     @FXML Label value_fatAmount;
@@ -35,6 +39,8 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
     @FXML Label value_proteinCalories;
     @FXML Label value_totalCalories;
 
+    @FXML Label label_warningMessage;
+
     @FXML TableColumn<FoodIntake, String> column_mealTime;
     @FXML TableColumn<FoodIntake, String> column_foodGroup;
     @FXML TableColumn<FoodIntake, String> column_description;
@@ -42,6 +48,7 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
     @FXML TableColumn<FoodIntake, String> column_fats;
     @FXML TableColumn<FoodIntake, String> column_proteins;
     @FXML TableColumn<FoodIntake, String> column_calories;
+    @FXML TableColumn<FoodIntake, String> column_delete;
 
     @FXML TableView<FoodIntake> table_summary;
 
@@ -131,6 +138,8 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
     }
 
     public void refreshData(Query_Type queryType, String queryParameter) {
+        currentType = queryType;
+        currentParamter = queryParameter;
         String query;
         if (queryType == Query_Type.ALL) {
             System.out.println(TAG + "Selecting ALL Data");
@@ -183,7 +192,7 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
         column_description.setCellValueFactory(new PropertyValueFactory<>("description"));
         column_carbs.setCellValueFactory(new PropertyValueFactory<>("carbContent"));
         column_fats.setCellValueFactory(new PropertyValueFactory<>("fatContent"));
-        column_proteins.setCellValueFactory(new PropertyValueFactory<>("proteinContent")); // ERROR IS HERE
+        column_proteins.setCellValueFactory(new PropertyValueFactory<>("proteinContent"));
         column_calories.setCellValueFactory(new PropertyValueFactory<>("calories"));
 
         ObservableList<FoodIntake> data = FXCollections.observableArrayList();
@@ -197,6 +206,28 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
         System.out.println(TAG + "Getting all data for this date");
         refreshData(Query_Type.ALL,"ALL");
 
+    }
+
+    @FXML
+    public void onDeleteSelected(ActionEvent event) {
+        System.out.println("Deleting Field");
+
+        try {
+            FoodIntake selectedItem = table_summary.getSelectionModel().getSelectedItem();
+            System.out.println(selectedItem.toString());
+
+            String query = String.format("DELETE from FoodIntake where mealId = %s",
+                                            selectedItem.getMealId());
+            database.insertStatement(query);
+            refreshData(currentType, currentParamter);
+            label_warningMessage.setTextFill(Color.GREEN);
+            label_warningMessage.setText("Row Deleted");
+
+        } catch (Exception e) {
+            System.out.println("ERROR");
+            label_warningMessage.setText("Please select a row");
+            label_warningMessage.setTextFill(Color.RED);
+        }
     }
 
     @FXML

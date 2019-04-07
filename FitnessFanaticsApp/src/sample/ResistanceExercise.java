@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 public class ResistanceExercise {
 
+    int exerciseId;
     int userId;
     long date;
     String exercise;
@@ -11,7 +12,8 @@ public class ResistanceExercise {
     int sets;
     int timeTaken;
 
-    public ResistanceExercise(int userId, long date, String exercise, int mass, int sets, int timeTaken) {
+    public ResistanceExercise(int exerciseId, int userId, long date, String exercise, int mass, int sets, int timeTaken) {
+        this.exerciseId = exerciseId;
         this.userId = userId;
         this.date = date;
         this.exercise = exercise;
@@ -69,6 +71,14 @@ public class ResistanceExercise {
 
     public void setTimeTaken(int timeTaken) {
         this.timeTaken = timeTaken;
+    }
+
+    public int getExerciseId() {
+        return exerciseId;
+    }
+
+    public void setExerciseId(int exerciseId) {
+        this.exerciseId = exerciseId;
     }
 
     @Override

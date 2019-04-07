@@ -6,7 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 import sample.AerobicExercise;
+import sample.FoodIntake;
 import sample.MentalExercise;
 import sample.SessionDataHolder;
 
@@ -16,6 +18,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ActivityLogAerobic extends ActivityLogBaseController {
+
+    @FXML Label label_warningMessage;
 
     @FXML TextField input_description;
     @FXML Spinner input_time;
@@ -58,6 +62,7 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
             ResultSet rs = database.getResultSet(query);
             while (rs.next()) {
                 exerciseList.add(new AerobicExercise(
+                        rs.getInt(1),
                         rs.getInt(2), // userId
                         rs.getLong(3), // date
                         rs.getString(4), // exercise
@@ -85,6 +90,7 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
     @FXML
     public void addNewEntryButton(ActionEvent event) throws IOException, SQLException {
         AerobicExercise aerobicExercise = new AerobicExercise(
+                0,
                 SessionDataHolder.user.getId(),
                 SessionDataHolder.getDateRequested(),
                 input_description.getText(),
@@ -95,6 +101,28 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
         aerobicExercise.createDatabaseRecord();
         populateTable();
         refreshLabels();
+    }
+
+    @FXML
+    public void onDeleteSelected(ActionEvent event) {
+        System.out.println("Deleting Field");
+
+        try {
+            AerobicExercise selectedItem = table_summary.getSelectionModel().getSelectedItem();
+            System.out.println(selectedItem.toString());
+
+            String query = String.format("DELETE from Aerobic_Exercise where exerciseId = %s",
+                    selectedItem.getExerciseId());
+            database.insertStatement(query);
+            populateTable();
+            label_warningMessage.setTextFill(Color.GREEN);
+            label_warningMessage.setText("Row Deleted");
+
+        } catch (Exception e) {
+            System.out.println("ERROR");
+            label_warningMessage.setTextFill(Color.RED);
+            label_warningMessage.setText("Please select a row");
+        }
     }
 
 }
