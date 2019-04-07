@@ -23,7 +23,7 @@
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <HBox fx:id="navigation_dashboard" minHeight="50.0" onMouseClicked="#onDashboardButtonClick" prefWidth="200.0" styleClass="dashboardBbtns">
+            <HBox fx:id="navigation_dashboard" minHeight="50.0" onMouseClicked="#onDashboardButtonClick" prefWidth="200.0" styleClass="dashboardBbtnsSelected">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>

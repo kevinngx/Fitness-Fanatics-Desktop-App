@@ -2,16 +2,12 @@ package Application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import sample.DailyData;
-import sample.DateHelper;
-import sample.PageSwitcherHelper;
 import sample.SessionDataHolder;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DailyStatsNewDataController extends DailyStatsController {

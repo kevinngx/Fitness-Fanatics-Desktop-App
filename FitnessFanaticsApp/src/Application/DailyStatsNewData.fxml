@@ -53,7 +53,7 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
-            <HBox minHeight="50.0" onMouseClicked="#onDailyStatsButtonClick" prefWidth="200.0" styleClass="dashboardBbtns">
+            <HBox minHeight="50.0" onMouseClicked="#onDailyStatsButtonClick" prefWidth="200.0" styleClass="dashboardBbtnsSelected">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>

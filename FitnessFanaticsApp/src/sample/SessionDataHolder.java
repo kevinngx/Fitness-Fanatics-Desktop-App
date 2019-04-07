@@ -6,6 +6,7 @@ public class SessionDataHolder {
 
     public static User user = getDefaultUser();
     public static DailyData dailyData = new DailyData();
+    public static FoodIntake foodIntake = new FoodIntake();
     public static String currentPage;
     public static String previousPage;
     public static long dateRequested;

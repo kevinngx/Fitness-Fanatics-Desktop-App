@@ -14,6 +14,10 @@
     -fx-background-color: #202332;
 }
 
+.dashboardBbtnsSelected {
+    -fx-background-color: #202332;
+}
+
 .btn {
     -fx-background-color:  #00A2D3;
     -fx-background-radius: 0;
@@ -42,5 +46,9 @@
 }
 
 .pageMessage {
+
+}
+
+.sumaryTable {
 
 }
