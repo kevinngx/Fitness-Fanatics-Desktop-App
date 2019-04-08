@@ -6,9 +6,9 @@ public class DateHelper {
 
         char[] dateArray = Long.toString(date).toCharArray();
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < dateArray.length; i++) {
-            System.out.println("Char: " + i + " " + dateArray[i]);
-        }
+//        for (int i = 0; i < dateArray.length; i++) {
+//            System.out.println("Char: " + i + " " + dateArray[i]);
+//        }
         // From yyyyMMdd to dd/mm/yyyy
         sb.append(dateArray[6]);
         sb.append(dateArray[7]);

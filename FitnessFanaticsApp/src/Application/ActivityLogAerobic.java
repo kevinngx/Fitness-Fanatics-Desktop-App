@@ -29,8 +29,7 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
     @FXML TableColumn<AerobicExercise, String> column_distance;
     @FXML TableColumn<AerobicExercise, String> column_time;
 
-    @FXML
-    TableView<AerobicExercise> table_summary;
+    @FXML TableView<AerobicExercise> table_summary;
 
     @FXML
     public void initialize() {

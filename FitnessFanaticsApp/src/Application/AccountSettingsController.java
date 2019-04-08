@@ -59,6 +59,7 @@ public class AccountSettingsController extends ApplicationBase {
     @FXML
     public void initialize() {
         setupHeaders("Account Settings");
+        //TODO: Reset user data
 
         value_userId.setText(Integer.toString(SessionDataHolder.user.getId()));
         value_username.setText(SessionDataHolder.user.getUsername());
@@ -184,6 +185,7 @@ public class AccountSettingsController extends ApplicationBase {
                 newValue,
                 SessionDataHolder.user.getId());
         database.insertStatement(query);
+        SessionDataHolder.user.setWeight(Double.parseDouble(newValue));
         value_weight.setText(newValue + "kg");
     }
 
@@ -196,6 +198,7 @@ public class AccountSettingsController extends ApplicationBase {
                 newValue,
                 SessionDataHolder.user.getId());
         database.insertStatement(query);
+        SessionDataHolder.user.setHeight(Double.parseDouble(newValue));
         value_height.setText(newValue + "cm");
     }
 
@@ -208,6 +211,7 @@ public class AccountSettingsController extends ApplicationBase {
                 newValue,
                 SessionDataHolder.user.getId());
         database.insertStatement(query);
+        SessionDataHolder.user.setBodyFatPercentage(Double.parseDouble(newValue));
         value_bodyFatPercentage.setText(newValue + "%");
     }
 
