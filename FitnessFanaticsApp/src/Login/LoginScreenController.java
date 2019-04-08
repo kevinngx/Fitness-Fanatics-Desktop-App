@@ -9,10 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import sample.Database;
-import sample.PageSwitcherHelper;
-import sample.SessionDataHolder;
-import sample.User;
+import sample.*;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -88,6 +85,7 @@ public class LoginScreenController {
     private boolean authenticateUser(String inputPassword) {
         if (inputPassword.equals(currentUser.getPassword())) {
             System.out.println(TAG + "User authenticated, signing in...");
+            SessionDataHolder.dateRequested = DateHelper.getCurrentDate();
             SessionDataHolder.user = currentUser;
             return true;
         }

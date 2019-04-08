@@ -14,6 +14,7 @@ import sample.SessionDataHolder;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class ActivityLogBaseController extends ActivityLogController {
 
@@ -33,6 +34,7 @@ public class ActivityLogBaseController extends ActivityLogController {
     @FXML
     public void initialize() {
         setupHeaders("Activity Log");
+        date_selection.setValue(LocalDate.now());
         try {
             refreshLabels();
         } catch (SQLException e) {

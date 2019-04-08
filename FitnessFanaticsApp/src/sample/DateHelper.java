@@ -1,5 +1,8 @@
 package sample;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class DateHelper {
 
     public static String longDateToString(long date) {
@@ -41,5 +44,16 @@ public class DateHelper {
         System.out.println("Output: " + sb.toString());
         return Long.parseLong(sb.toString());
 
+    }
+
+    public static long getCurrentDate() {
+
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
+        LocalDate localDate = LocalDate.now();
+        System.out.println(dtf.format(localDate)); //2016/11/16
+
+
+        return Long.parseLong(dtf.format(localDate));
     }
 }
