@@ -93,12 +93,20 @@ public class HealthCheckController extends ApplicationBase {
     }
 
     private void setLatestResults() {
-        value_date.setText(dataSet.get(0).getDateString());
-        value_cholesterolLevel.setText(Double.toString(dataSet.get(0).getCholesterolLevel()));
-        value_bloodPressure.setText(Double.toString(dataSet.get(0).getBloodPressure()));
-        value_bloodSugar.setText(Double.toString(dataSet.get(0).getBloodPressure()));
-        value_doctorsComment.setText(dataSet.get(0).getDoctorsComment());
-        setColorScales();
+        if (dataSet.size() > 0) {
+            value_date.setText(dataSet.get(0).getDateString());
+            value_cholesterolLevel.setText(Double.toString(dataSet.get(0).getCholesterolLevel()));
+            value_bloodPressure.setText(Double.toString(dataSet.get(0).getBloodPressure()));
+            value_bloodSugar.setText(Double.toString(dataSet.get(0).getBloodPressure()));
+            value_doctorsComment.setText(dataSet.get(0).getDoctorsComment());
+            setColorScales();
+        } else {
+            value_date.setText("No Record");
+            value_cholesterolLevel.setText("");
+            value_bloodPressure.setText("");
+            value_bloodSugar.setText("");
+            value_doctorsComment.setText("");
+        }
     }
 
     private void setColorScales() {

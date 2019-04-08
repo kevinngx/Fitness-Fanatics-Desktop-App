@@ -234,9 +234,9 @@
                   <Label layoutX="173.0" layoutY="60.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Cholesterol Level" />
                   <Label layoutX="187.0" layoutY="85.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Pressure" />
                   <Label layoutX="203.0" layoutY="110.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Sugar" />
-                  <Label fx:id="value_cholesterolLevel" layoutX="307.0" layoutY="59.0" text="xxx" />
-                  <Label fx:id="value_bloodPressure" layoutX="307.0" layoutY="85.0" text="xxx" />
-                  <Label fx:id="value_bloodSugar" layoutX="308.0" layoutY="110.0" text="xxx" />
+                  <Label fx:id="value_cholesterolLevel" layoutX="307.0" layoutY="59.0" />
+                  <Label fx:id="value_bloodPressure" layoutX="307.0" layoutY="85.0" />
+                  <Label fx:id="value_bloodSugar" layoutX="308.0" layoutY="110.0" />
                   <Label layoutX="23.0" layoutY="14.0" prefHeight="50.0" prefWidth="86.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Most recent checkup:" wrapText="true">
                      <font>
                         <Font size="14.0" />
@@ -263,7 +263,7 @@
                   <Label layoutX="44.0" layoutY="408.0" prefHeight="27.0" prefWidth="94.0" text="Cholesterol " />
                   <Label layoutX="23.0" layoutY="439.0" prefHeight="27.0" prefWidth="94.0" text="Blood Pressure" />
                   <Label layoutX="36.0" layoutY="473.0" prefHeight="27.0" prefWidth="94.0" text="Blood Sugar" />
-                  <TextArea fx:id="value_doctorsComment" editable="false" layoutX="411.0" layoutY="52.0" prefHeight="82.0" prefWidth="256.0" text="Example Text" />
+                  <TextArea fx:id="value_doctorsComment" editable="false" layoutX="411.0" layoutY="52.0" prefHeight="82.0" prefWidth="256.0" />
                   <Label layoutX="411.0" layoutY="21.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Doctor's Comments">
                      <font>
                         <Font size="14.0" />
@@ -274,7 +274,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="value_date" layoutX="30.0" layoutY="89.0" text="dd/MM/yyyy">
+                  <Label fx:id="value_date" layoutX="30.0" layoutY="89.0" text="No Records" wrapText="true">
                      <font>
                         <Font size="21.0" />
                      </font>
