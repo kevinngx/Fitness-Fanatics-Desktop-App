@@ -237,15 +237,15 @@
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label layoutX="92.0" layoutY="376.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Step Count:">
+                  <Label layoutX="68.0" layoutY="376.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Step Count:">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label layoutX="92.0" layoutY="420.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Stair Count: ">
+                  <Label layoutX="68.0" layoutY="420.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Stair Count: ">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label layoutX="45.0" layoutY="465.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Resting Heart Rate: ">
+                  <Label layoutX="21.0" layoutY="465.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Resting Heart Rate: ">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
@@ -268,19 +268,28 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="340.0" layoutY="376.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="340.0" layoutY="420.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutX="340.0" layoutY="465.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
+                  <Rectangle fx:id="rectangle_stepCount" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="17.0" layoutX="422.0" layoutY="376.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
+                  <Rectangle fx:id="rectangle_stairCount" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="17.0" layoutX="422.0" layoutY="420.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
+                  <Rectangle fx:id="rectangle_restingHeartRate" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="17.0" layoutX="422.0" layoutY="465.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
                   <Label fx:id="value_weight" layoutX="130.0" layoutY="213.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_height" layoutX="336.0" layoutY="213.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_bmi" layoutX="544.0" layoutY="213.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_fatMass" layoutX="129.0" layoutY="298.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_leanMass" layoutX="335.0" layoutY="298.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_bodyFat" layoutX="543.0" layoutY="298.0" text="xxx" textFill="WHITE" />
-                  <PieChart fx:id="bmi_chart" layoutX="431.0" layoutY="351.0" prefHeight="156.0" prefWidth="188.0" title="Body Fat Ratio" />
-                  <Label fx:id="value_stepCount" layoutX="201.0" layoutY="377.0" text="xxx" />
-                  <Label fx:id="value_stairCount" layoutX="201.0" layoutY="421.0" text="xxx" />
-                  <Label fx:id="value_heartRate" layoutX="201.0" layoutY="466.0" text="xxx" />
+                  <PieChart fx:id="bmi_chart" labelLineLength="40.0" layoutX="463.0" layoutY="336.0" prefHeight="186.0" prefWidth="216.0" title="Body Fat Ratio" />
+                  <Label fx:id="value_stepCount" layoutX="187.0" layoutY="377.0" text="xxx" />
+                  <Label fx:id="value_stairCount" layoutX="187.0" layoutY="421.0" text="xxx" />
+                  <Label fx:id="value_heartRate" layoutX="187.0" layoutY="466.0" text="xxx" />
+                  <Label layoutX="178.0" layoutY="344.0" text="Today" />
+                  <Label fx:id="goal_stepCount" layoutX="260.0" layoutY="377.0" text="xxx" />
+                  <Label fx:id="goal_stairCount" layoutX="260.0" layoutY="421.0" text="xxx" />
+                  <Label fx:id="goal_restingHeartRate" layoutX="260.0" layoutY="466.0" text="xxx" />
+                  <Label layoutX="253.0" layoutY="344.0" text="Goal" />
+                  <Label layoutX="310.0" layoutY="344.0" text="Achievment" />
+                  <Label fx:id="achievment_stepCount" layoutX="335.0" layoutY="377.0" text="xxx" />
+                  <Label fx:id="achievment_stairCount" layoutX="335.0" layoutY="421.0" text="xxx" />
+                  <Label fx:id="achievment_restingHeartRate" layoutX="335.0" layoutY="466.0" text="xxx" />
                </children>
             </AnchorPane>
          </children></VBox>
