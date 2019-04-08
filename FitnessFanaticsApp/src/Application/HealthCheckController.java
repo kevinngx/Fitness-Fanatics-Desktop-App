@@ -13,6 +13,7 @@ import sample.*;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class HealthCheckController extends ApplicationBase {
@@ -55,6 +56,7 @@ public class HealthCheckController extends ApplicationBase {
     }
 
     private void refreshData() {
+        input_date.setValue(LocalDate.now());
         dataSet = pullData();
 
         System.out.println("Data pulled: ");

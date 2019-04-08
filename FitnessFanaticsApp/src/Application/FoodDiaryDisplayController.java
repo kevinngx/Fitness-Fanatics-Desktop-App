@@ -18,6 +18,7 @@ import sample.SessionDataHolder;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class FoodDiaryDisplayController extends FoodDiaryController {
@@ -57,6 +58,7 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
     @FXML
     public void initialize() {
         setupHeaders("Food Diary - Display");
+        date_selection.setValue(LocalDate.now());
 
         // Get Data
         refreshData(Query_Type.ALL,"ALL");

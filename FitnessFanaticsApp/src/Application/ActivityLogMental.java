@@ -15,6 +15,7 @@ import sample.SessionDataHolder;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ActivityLogMental extends ActivityLogBaseController {
@@ -34,6 +35,7 @@ public class ActivityLogMental extends ActivityLogBaseController {
     @FXML
     public void initialize() {
         setupHeaders("Activity - Mental Exercises");
+        date_selection.setValue(LocalDate.now());
 
         SpinnerValueFactory<Integer> timeValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100000, 0);
         this.input_time.setValueFactory(timeValueFactory);

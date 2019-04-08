@@ -12,23 +12,23 @@ import sample.User;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class DailyStatsController extends ApplicationBase {
 
-    @FXML private DatePicker date_selection;
+    @FXML DatePicker date_selection;
 
     @FXML
     public void initialize() throws SQLException {
         setupHeaders("Daily Stats");
+        date_selection.setValue(LocalDate.now());
     }
 
     @FXML
     public void onGetDataButtonClick(ActionEvent event) throws IOException {
         if (date_selection.getValue() == null) return;
         SessionDataHolder.dateRequested = DateHelper.inputStringToLongDate(date_selection.getEditor().getText());
-        //TODO: Change '1' and '20190405 to
         String query = String.format("SELECT * FROM DailyData WHERE userId = %s AND date = %s", SessionDataHolder.getUser().getId(), SessionDataHolder.getDateRequested());
-        //SessionDataHolder.getUser().getId(), input
 
         try {
             ResultSet rs = database.getResultSet(query);

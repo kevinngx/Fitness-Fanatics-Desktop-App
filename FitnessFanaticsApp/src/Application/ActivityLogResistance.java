@@ -14,6 +14,7 @@ import sample.SessionDataHolder;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ActivityLogResistance extends ActivityLogBaseController {
@@ -37,6 +38,7 @@ public class ActivityLogResistance extends ActivityLogBaseController {
     @FXML
     public void initialize() {
         setupHeaders("Activity - Resistance Exercises");
+        date_selection.setValue(LocalDate.now());
 
         SpinnerValueFactory<Integer> massValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100000, 0);
         this.input_mass.setValueFactory(massValueFactory);

@@ -8,14 +8,16 @@ import sample.SessionDataHolder;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 
 public class FoodDiaryController extends ApplicationBase {
 
-    @FXML private DatePicker date_selection;
+    @FXML DatePicker date_selection;
 
     @FXML
     public void initialize() {
         setupHeaders("Food Diary");
+        date_selection.setValue(LocalDate.now());
     }
 
     @FXML

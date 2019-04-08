@@ -8,14 +8,16 @@ import sample.SessionDataHolder;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 
 public class ActivityLogController extends ApplicationBase {
 
-    @FXML private DatePicker date_selection;
+    @FXML DatePicker date_selection;
 
     @FXML
     public void initialize() {
         setupHeaders("Activity Log");
+        date_selection.setValue(LocalDate.now());
     }
 
     @FXML

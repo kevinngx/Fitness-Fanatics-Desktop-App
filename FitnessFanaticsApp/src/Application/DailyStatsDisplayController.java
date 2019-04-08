@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import sample.SessionDataHolder;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class DailyStatsDisplayController extends DailyStatsController {
 
@@ -25,6 +26,7 @@ public class DailyStatsDisplayController extends DailyStatsController {
 
     @FXML
     public void initialize() throws SQLException {
+        date_selection.setValue(LocalDate.now());
         setupHeaders("Daily Stats - Summary");
         value_height.setText(Double.toString(SessionDataHolder.dailyData.getHeight()));
         value_weight.setText(Double.toString(SessionDataHolder.dailyData.getWeight()));
