@@ -55,9 +55,9 @@ public class DailyStatsDisplayController extends DailyStatsController {
         String bmr = String.format("%.2f", SessionDataHolder.user.calculateBasalMetabolicRate());
         value_bmr.setText(bmr);
         System.out.println("BMR CALCULATED");
-        String fatMass = String.format("%.2f", calculateLeanMass());
+        String fatMass = String.format("%.2f", calculateFatMass());
         value_fatMass.setText(fatMass);
-        String leanMass = String.format("%.2f", calculateFatMass());
+        String leanMass = String.format("%.2f", calculateLeanMass());
         value_leanMass.setText(leanMass);
         value_bodyFat.setText(Double.toString(SessionDataHolder.dailyData.getBodyFatPercentage()));
         value_stepCount.setText(Integer.toString(SessionDataHolder.dailyData.getStepCount()));
@@ -66,8 +66,6 @@ public class DailyStatsDisplayController extends DailyStatsController {
 
         bmi_chart.setData(getBmiChartData());
         setColorScales();
-
-        //TODO: Set color scales for step counts
     }
 
     private double calculateBasalMetabolicRate() {

@@ -354,7 +354,7 @@ public class DashboardController extends ApplicationBase {
                 value_recentCheckup.setText(Long.toString(daysSinceLastHealthCheck) + " days");
                 value_cholesterolLevel.setText(Double.toString(latestHealthCheck.getCholesterolLevel()) + "mg/dL");
                 value_bloodPressure.setText(Double.toString(latestHealthCheck.getBloodPressure()) + "mmHg");
-                value_bloodSugar.setText(Double.toString(latestHealthCheck.getBloodPressure()) + "mmol/L");
+                value_bloodSugar.setText(Double.toString(latestHealthCheck.getBloodSugar()) + "mmol/L");
                 setColorScales();
             } else {
                 value_recentCheckup.setText("No Records");
