@@ -243,50 +243,38 @@
                   <Label fx:id="value_goalIntake" layoutX="579.0" layoutY="382.0" text="no goal set" textFill="WHITE" />
                   <Label fx:id="value_difference" layoutX="579.0" layoutY="421.0" text="no goal set" textFill="WHITE" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" layoutX="27.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="167.0" />
-                  <Label layoutX="38.0" layoutY="29.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Previous Health Check:" wrapText="true">
+                  <Label layoutX="33.0" layoutY="29.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Previous Health Check:" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="value_recentCheckup" layoutX="41.0" layoutY="80.0" text="20num" wrapText="true">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
+                  <Label fx:id="value_recentCheckup" layoutX="36.0" layoutY="80.0" text="20num" wrapText="true" />
                   <Rectangle fx:id="rectangle_daysSinceLastCheck" arcHeight="5.0" arcWidth="5.0" fill="#141414" height="90.0" layoutX="156.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" layoutX="212.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                  <Label layoutX="223.0" layoutY="134.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Sugar" wrapText="true">
+                  <Label layoutX="218.0" layoutY="134.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Sugar" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="value_bloodSugar" layoutX="226.0" layoutY="185.0" text="20num" wrapText="true">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
+                  <Label fx:id="value_bloodSugar" layoutX="219.0" layoutY="185.0" text="20num" wrapText="true" />
                   <Rectangle fx:id="rectangle_bloodSugar" arcHeight="5.0" arcWidth="5.0" height="90.0" layoutX="328.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" layoutX="214.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                  <Label layoutX="225.0" layoutY="29.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Cholesterol" wrapText="true">
+                  <Label layoutX="220.0" layoutY="29.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Cholesterol" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="value_cholesterolLevel" layoutX="228.0" layoutY="80.0" text="20num" wrapText="true">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
+                  <Label fx:id="value_cholesterolLevel" layoutX="223.0" layoutY="80.0" text="20num" wrapText="true" />
                   <Rectangle fx:id="rectangle_cholesterol" arcHeight="5.0" arcWidth="5.0" height="90.0" layoutX="328.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" layoutX="27.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="167.0" />
-                  <Label layoutX="38.0" layoutY="134.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Pressure" wrapText="true">
+                  <Label layoutX="33.0" layoutY="134.0" prefHeight="50.0" prefWidth="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Pressure" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="value_bloodPressure" layoutX="41.0" layoutY="185.0" text="20num" wrapText="true">
+                  <Label fx:id="value_bloodPressure" layoutX="34.0" layoutY="185.0" text="20num" wrapText="true">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="12.0" />
                      </font>
                   </Label>
                   <Rectangle fx:id="rectangle_bloodPressure" arcHeight="5.0" arcWidth="5.0" height="90.0" layoutX="156.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="43.0" />
@@ -315,6 +303,11 @@
                       <NumberAxis label="Minutes Sleep" side="LEFT" />
                     </yAxis>
                   </LineChart>
+                  <Button fx:id="button_home1" layoutX="337.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpBloodSugarButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home11" layoutX="165.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpBloodPressureButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home111" layoutX="337.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpCholesterolButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home12" layoutX="660.0" layoutY="473.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpCalorieButtonClick" prefHeight="27.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home1111" layoutX="165.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpHealthCheckButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children></VBox>

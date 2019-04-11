@@ -15,23 +15,23 @@
 <AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUp.SignUpScreenFiveController">
     <children>
       <Line endX="175.0" layoutX="362.0" layoutY="415.0" startX="-100.0" />
-      <Circle fill="#615d5d" layoutX="297.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#615d5d" layoutX="349.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#615d5d" layoutX="401.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#615d5d" layoutX="454.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#615d5d" layoutX="509.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="297.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="349.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="401.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="454.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="509.0" layoutY="415.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Label layoutX="294.0" layoutY="444.0" text="1" />
       <Label layoutX="346.0" layoutY="444.0" text="2" />
       <Label layoutX="398.0" layoutY="444.0" text="3" />
       <Label layoutX="451.0" layoutY="444.0" text="4" />
       <Label layoutX="506.0" layoutY="444.0" text="5" />
-      <Button layoutX="415.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleNextButtonAction" prefHeight="52.0" prefWidth="182.0" style="-fx-background-color: Green;" text="Confirm Registration" />
+      <Button layoutX="415.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleNextButtonAction" prefHeight="52.0" prefWidth="182.0" styleClass="btn" stylesheets="@../css/stylesheet.css" text="Confirm Registration" textFill="WHITE" />
       <Text layoutX="210.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do these look right?" textAlignment="CENTER" wrappingWidth="380.0">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Button layoutX="216.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="34.0" prefWidth="136.0" text="Back" />
+      <Button layoutX="216.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="34.0" prefWidth="136.0" styleClass="btn" stylesheets="@../css/stylesheet.css" text="Back" textFill="WHITE" />
       <GridPane layoutX="180.0" layoutY="138.0" prefHeight="159.0" prefWidth="191.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="68.0" />

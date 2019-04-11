@@ -59,7 +59,6 @@ public class AccountSettingsController extends ApplicationBase {
     @FXML
     public void initialize() {
         setupHeaders("Account Settings");
-        //TODO: Reset user data
 
         value_userId.setText(Integer.toString(SessionDataHolder.user.getId()));
         value_username.setText(SessionDataHolder.user.getUsername());
@@ -67,6 +66,7 @@ public class AccountSettingsController extends ApplicationBase {
         value_name.setText(String.format(SessionDataHolder.user.getFirstName() + " " + SessionDataHolder.user.getLastName()));
         value_dob.setText(DateHelper.longDateToString(SessionDataHolder.user.getDateOfBirth()));
         refreshDetailValues();
+        value_gender.setText(SessionDataHolder.user.getGender());
 
         //setup spinners
         SpinnerValueFactory<Double> heightValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 300.0, SessionDataHolder.user.getHeight());

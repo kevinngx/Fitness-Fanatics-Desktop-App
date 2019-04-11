@@ -41,7 +41,7 @@ public class DateHelper {
     }
 
     public static long inputStringToLongDate(String dateString) {
-        System.out.println("Input: " + dateString);
+//        System.out.println("Input: " + dateString);
         // We want yyyyMMdd
         String [] dateParts = dateString.split("/");
         String day = dateParts[0];
@@ -54,7 +54,7 @@ public class DateHelper {
             sb.append('0');
         }
         sb.append(day);
-        System.out.println("Output: " + sb.toString());
+//        System.out.println("Output: " + sb.toString());
         return Long.parseLong(sb.toString());
 
     }
@@ -62,12 +62,9 @@ public class DateHelper {
 
 
     public static long getCurrentDate() {
-
-
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
         LocalDate localDate = LocalDate.now();
-        System.out.println(dtf.format(localDate)); //2016/11/16
-
+//        System.out.println(dtf.format(localDate)); //2016/11/16
 
         return Long.parseLong(dtf.format(localDate));
     }

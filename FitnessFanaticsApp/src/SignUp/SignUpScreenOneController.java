@@ -42,6 +42,7 @@ public class SignUpScreenOneController {
     @FXML
     private void handleBackButtonAction(ActionEvent event) throws IOException {
         System.out.println(TAG + "Back button pressed");
+        pageSwitcherHelper.switcher(event, "../Login/LoginScreen.fxml");
 
     }
 

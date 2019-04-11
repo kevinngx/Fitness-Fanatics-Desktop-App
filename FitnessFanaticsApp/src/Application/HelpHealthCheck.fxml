@@ -8,17 +8,17 @@
 
 <AnchorPane prefHeight="255.0" prefWidth="259.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.HelpCholesterol">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREEN" height="27.0" layoutX="172.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="27.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="27.0" layoutX="172.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="27.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="27.0" layoutX="172.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" width="27.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREEN" height="27.0" layoutX="158.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" width="27.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="27.0" layoutX="158.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="27.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="27.0" layoutX="158.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" width="27.0" />
       <Button fx:id="close_button" layoutX="75.0" layoutY="199.0" mnemonicParsing="false" onAction="#onBackSelected" prefHeight="27.0" prefWidth="110.0" styleClass="btn" stylesheets="@../css/stylesheet.css" text="Back" textFill="WHITE" />
-      <Label layoutX="29.0" layoutY="29.0" text="Cholesterol Level Guide">
+      <Label layoutX="29.0" layoutY="29.0" text="Health Check Ratings">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="73.0" text="&lt; 200mg/dL" />
-      <Label layoutX="54.0" layoutY="113.0" text="&lt; 240mg/dL" />
-      <Label layoutX="54.0" layoutY="153.0" text="&gt;= 240mg/dL" />
+      <Label layoutX="62.0" layoutY="73.0" text="&lt; 1 Year" />
+      <Label layoutX="62.0" layoutY="113.0" text="&gt; 1 Year" />
+      <Label layoutX="62.0" layoutY="153.0" text="&gt; 2 Years" />
    </children>
 </AnchorPane>

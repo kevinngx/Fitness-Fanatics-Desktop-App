@@ -303,9 +303,11 @@
                       <NumberAxis label="Minutes Sleep" side="LEFT" />
                     </yAxis>
                   </LineChart>
-                  <Button fx:id="button_home1" layoutX="302.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
-                  <Button fx:id="button_home11" layoutX="130.0" layoutY="187.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
-                  <Button fx:id="button_home111" layoutX="302.0" layoutY="82.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpCholesterolButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home1" layoutX="337.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpBloodSugarButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home11" layoutX="165.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpBloodPressureButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home111" layoutX="337.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpCholesterolButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home12" layoutX="660.0" layoutY="473.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpCalorieButtonClick" prefHeight="27.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
+                  <Button fx:id="button_home1111" layoutX="165.0" layoutY="89.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onHelpHealthCheckButtonClick" prefHeight="29.0" prefWidth="26.0" styleClass="btn" text="?" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children></VBox>

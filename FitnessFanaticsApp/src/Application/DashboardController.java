@@ -5,10 +5,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import sample.*;
 
 import java.io.IOException;
@@ -22,37 +27,53 @@ public class DashboardController extends ApplicationBase {
     NumberAxis y_axis;
     @FXML
     CategoryAxis x_axis;
-    @FXML LineChart<?, ?> chart_sleepTracker;
-//    @FXML BarChart<?, ?> chart_sleepTracker;
-
-    // Health check things
+    @FXML
+    LineChart<?, ?> chart_sleepTracker;
 
     HealthCheck latestHealthCheck;
+    long daysSinceLastHealthCheck = 0;
 
-    @FXML Label value_recentCheckup;
-    @FXML Label value_cholesterolLevel;
-    @FXML Label value_bloodPressure;
-    @FXML Label value_bloodSugar;
+    @FXML
+    Label value_recentCheckup;
+    @FXML
+    Label value_cholesterolLevel;
+    @FXML
+    Label value_bloodPressure;
+    @FXML
+    Label value_bloodSugar;
 
-    @FXML Rectangle rectangle_daysSinceLastCheck;
-    @FXML Rectangle rectangle_cholesterol;
-    @FXML Rectangle rectangle_bloodPressure;
-    @FXML Rectangle rectangle_bloodSugar;
+    @FXML
+    Rectangle rectangle_daysSinceLastCheck;
+    @FXML
+    Rectangle rectangle_cholesterol;
+    @FXML
+    Rectangle rectangle_bloodPressure;
+    @FXML
+    Rectangle rectangle_bloodSugar;
 
     // Calorie summary things
 
     enum Macronutrient {CARBS, FATS, PROTEINS};
     enum Activity_Type {RESISTANCE, AEROBIC, MENTAL, GYM, SLEEP};
+
     double caloriesConsumed;
     double caloriesBurned;
-    @FXML private PieChart chart_macros;
-    @FXML private PieChart chart_timeAllocation;
-    @FXML Label value_caloriesConsumed;
-    @FXML Label value_caloriesBurned;
-    @FXML Label value_netIntake;
-    @FXML Label value_goalIntake;
-    @FXML Label value_difference;
-    @FXML Rectangle rectangle_calories;
+    @FXML
+    private PieChart chart_macros;
+    @FXML
+    private PieChart chart_timeAllocation;
+    @FXML
+    Label value_caloriesConsumed;
+    @FXML
+    Label value_caloriesBurned;
+    @FXML
+    Label value_netIntake;
+    @FXML
+    Label value_goalIntake;
+    @FXML
+    Label value_difference;
+    @FXML
+    Rectangle rectangle_calories;
 
 
     ArrayList<FoodIntake> foodItems = new ArrayList<>();
@@ -65,7 +86,6 @@ public class DashboardController extends ApplicationBase {
         getActivityLog();
         getCalorieSummary();
         getSleepChart();
-
     }
 
     private void getSleepChart() {
@@ -76,13 +96,12 @@ public class DashboardController extends ApplicationBase {
         if (sleepTimes.size() > 5) {
             i = (sleepTimes.size() - 5);
         }
-        for (; i < sleepTimes.size() ; i++) {
+        for (; i < sleepTimes.size(); i++) {
             System.out.println(String.format("Adding: %s, %s ", DateHelper.longDateToStringWithoutYear(sleepTimes.get(i).getDate()), sleepTimes.get(i).getTimeTaken()));
             series.getData().add(new XYChart.Data(DateHelper.longDateToStringWithoutYear(sleepTimes.get(i).getDate()), sleepTimes.get(i).getTimeTaken()));
         }
 
         chart_sleepTracker.getData().addAll(series);
-
     }
 
     private ArrayList<OtherActivity> getSleepTimes() {
@@ -120,7 +139,7 @@ public class DashboardController extends ApplicationBase {
             rectangle_calories.setFill(Color.ORANGE);
         } else if (difference < -200 || difference > 200) {
             rectangle_calories.setFill(Color.YELLOW);
-        } else if(difference < -100 || difference > 100) {
+        } else if (difference < -100 || difference > 100) {
             rectangle_calories.setFill(Color.YELLOWGREEN);
         } else {
             rectangle_calories.setFill(Color.GREEN);
@@ -314,7 +333,6 @@ public class DashboardController extends ApplicationBase {
     }
 
     private void getRecentHealthCheck() {
-        // Pull date
         String query = String.format("select * from Health_Check  " +
                         "WHERE userId = %s ORDER BY date desc",
                 SessionDataHolder.user.getId());
@@ -331,8 +349,9 @@ public class DashboardController extends ApplicationBase {
                         rs.getDouble(6),
                         rs.getString(7)
                 );
-                System.out.println("Days since last check: " + Long.toString(DateHelper.getCurrentDate() - latestHealthCheck.getDate()) );
-                value_recentCheckup.setText(Long.toString(DateHelper.getCurrentDate() - latestHealthCheck.getDate()) + " days");
+                daysSinceLastHealthCheck = DateHelper.getCurrentDate() - latestHealthCheck.getDate();
+                System.out.println("Days since last check: " + Long.toString(daysSinceLastHealthCheck));
+                value_recentCheckup.setText(Long.toString(daysSinceLastHealthCheck) + " days");
                 value_cholesterolLevel.setText(Double.toString(latestHealthCheck.getCholesterolLevel()) + "mg/dL");
                 value_bloodPressure.setText(Double.toString(latestHealthCheck.getBloodPressure()) + "mmHg");
                 value_bloodSugar.setText(Double.toString(latestHealthCheck.getBloodPressure()) + "mmol/L");
@@ -346,6 +365,7 @@ public class DashboardController extends ApplicationBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
     private void setColorScales() {
@@ -355,7 +375,7 @@ public class DashboardController extends ApplicationBase {
         } else if (latestHealthCheck.getCholesterolLevel() < 240) {
             rectangle_cholesterol.setFill(Color.YELLOW);
         } else {
-            rectangle_cholesterol.setFill(Color.YELLOW);
+            rectangle_cholesterol.setFill(Color.RED);
         }
 
         // Blood Pressure
@@ -365,27 +385,104 @@ public class DashboardController extends ApplicationBase {
             rectangle_bloodPressure.setFill(Color.YELLOWGREEN);
         } else if (latestHealthCheck.getBloodPressure() < 139) {
             rectangle_bloodPressure.setFill(Color.YELLOW);
-        } else if(latestHealthCheck.getBloodPressure() < 180) {
+        } else if (latestHealthCheck.getBloodPressure() < 180) {
             rectangle_bloodPressure.setFill(Color.ORANGE);
         } else {
             rectangle_bloodPressure.setFill(Color.RED);
         }
 
         // Blood Sugar
-        if (latestHealthCheck.getBloodSugar() < 60 || latestHealthCheck.getBloodPressure() > 200) {
+        if (latestHealthCheck.getBloodSugar() < 60 || latestHealthCheck.getBloodSugar() > 200) {
             rectangle_bloodSugar.setFill(Color.RED);
-        } else if (latestHealthCheck.getBloodSugar() < 100 || latestHealthCheck.getBloodPressure() > 150) {
-            rectangle_bloodSugar.setFill(Color.ORANGE);
+        } else if (latestHealthCheck.getBloodSugar() < 100 || latestHealthCheck.getBloodSugar() > 150) {
+            rectangle_bloodSugar.setFill(Color.YELLOW);
         } else {
             rectangle_bloodSugar.setFill(Color.GREEN);
         }
 
+        // Days since
+        if (daysSinceLastHealthCheck > 365 * 2) {
+            rectangle_daysSinceLastCheck.setFill(Color.RED);
+        } else if (daysSinceLastHealthCheck > 365 * 1) {
+            rectangle_daysSinceLastCheck.setFill(Color.YELLOW);
+        } else {
+            rectangle_daysSinceLastCheck.setFill(Color.GREEN);
+        }
     }
 
     @FXML
     public void onHelpCholesterolButtonClick(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Application/HelpCholesterol.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 259, 255);
+            Stage stage = new Stage();
+            stage.setTitle("Cholesterol Ratings");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-        pageSwitcherHelper.switcher(event, "../Application/HelpCholesterol.fxml");
+    @FXML
+    public void onHelpBloodPressureButtonClick(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Application/HelpBloodPressure.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 259, 345);
+            Stage stage = new Stage();
+            stage.setTitle("Blood Pressure");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void onHelpBloodSugarButtonClick(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Application/HelpBloodSugar.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 335, 255);
+            Stage stage = new Stage();
+            stage.setTitle("Blood Sugar Guide");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void onHelpCalorieButtonClick(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Application/HelpCalorie.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 259, 302);
+            Stage stage = new Stage();
+            stage.setTitle("Calorie Guide");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void onHelpHealthCheckButtonClick(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("../Application/HelpBloodPressure.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 259, 255);
+            Stage stage = new Stage();
+            stage.setTitle("Cholesterol Ratings");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

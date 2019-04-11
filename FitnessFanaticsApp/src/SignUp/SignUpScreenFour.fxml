@@ -12,32 +12,33 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUp.SignUpScreenFourController">
     <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00a2d3" height="506.0" layoutX="524.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" width="276.0" />
         <Label fx:id="signupStatusLabel" layoutX="412.0" layoutY="455.0" prefHeight="17.0" prefWidth="350.0" />
-      <Line endX="-100.0" endY="-141.0" layoutX="617.0" layoutY="239.0" startX="-100.0" startY="164.0" />
       <Line endX="175.0" layoutX="231.0" layoutY="417.0" startX="-100.0" />
-      <Circle fill="#615d5d" layoutX="166.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#615d5d" layoutX="218.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#615d5d" layoutX="270.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#615d5d" layoutX="323.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="166.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="218.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="270.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#00a2d3" layoutX="323.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="WHITE" layoutX="378.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Label layoutX="163.0" layoutY="446.0" text="1" />
       <Label layoutX="215.0" layoutY="446.0" text="2" />
       <Label layoutX="267.0" layoutY="446.0" text="3" />
       <Label layoutX="320.0" layoutY="446.0" text="4" />
       <Label layoutX="375.0" layoutY="446.0" text="5" />
-      <Button layoutX="284.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleNextButtonAction" prefHeight="34.0" prefWidth="105.0" text="Next" />
+      <Button layoutX="284.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleNextButtonAction" prefHeight="34.0" prefWidth="105.0" styleClass="btn" stylesheets="@../css/stylesheet.css" text="Next" textFill="WHITE" />
       <Text layoutX="67.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finally, when were you born?" textAlignment="CENTER" wrappingWidth="380.0">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
       <Label fx:id="signupStatusLabel1" layoutX="293.0" layoutY="309.0" />
-      <Button layoutX="153.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="34.0" prefWidth="105.0" text="Back" />
+      <Button layoutX="153.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="34.0" prefWidth="105.0" styleClass="btn" stylesheets="@../css/stylesheet.css" text="Back" textFill="WHITE" />
       <GridPane layoutX="547.0" layoutY="110.0" prefHeight="281.0" prefWidth="191.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="68.0" />
@@ -54,82 +55,82 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Username:">
+            <Label text="Username:" textFill="WHITE">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_username" GridPane.columnIndex="1">
+            <Label fx:id="confirmation_username" textFill="WHITE" GridPane.columnIndex="1">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="Email:" GridPane.rowIndex="1">
+            <Label text="Email:" textFill="WHITE" GridPane.rowIndex="1">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="First Name:" GridPane.rowIndex="2">
+            <Label text="First Name:" textFill="WHITE" GridPane.rowIndex="2">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="Last Name:" GridPane.rowIndex="3">
+            <Label text="Last Name:" textFill="WHITE" GridPane.rowIndex="3">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="Gender:" GridPane.rowIndex="4">
+            <Label text="Gender:" textFill="WHITE" GridPane.rowIndex="4">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="Height:" GridPane.rowIndex="5">
+            <Label text="Height:" textFill="WHITE" GridPane.rowIndex="5">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="Weight:" GridPane.rowIndex="6">
+            <Label text="Weight:" textFill="WHITE" GridPane.rowIndex="6">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label text="Body Fat %:" GridPane.rowIndex="7">
+            <Label text="Body Fat %:" textFill="WHITE" GridPane.rowIndex="7">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_email" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="confirmation_email" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_bodyFatPercentage" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Label fx:id="confirmation_bodyFatPercentage" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_weight" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Label fx:id="confirmation_weight" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_height" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Label fx:id="confirmation_height" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_gender" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="confirmation_gender" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_lastName" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="confirmation_lastName" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <padding>
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="confirmation_firstName" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="confirmation_firstName" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <padding>
                   <Insets left="5.0" />
                </padding>
