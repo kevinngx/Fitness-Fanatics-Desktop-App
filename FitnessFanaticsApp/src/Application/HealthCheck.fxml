@@ -231,20 +231,20 @@
                         <TableColumn fx:id="column_doctorsComment" prefWidth="111.0" text="Doctor's Comments" />
                      </columns>
                   </TableView>
-                  <Label layoutX="173.0" layoutY="60.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Cholesterol Level" />
-                  <Label layoutX="187.0" layoutY="85.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Pressure" />
-                  <Label layoutX="203.0" layoutY="110.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Sugar" />
-                  <Label fx:id="value_cholesterolLevel" layoutX="307.0" layoutY="59.0" />
-                  <Label fx:id="value_bloodPressure" layoutX="307.0" layoutY="85.0" />
-                  <Label fx:id="value_bloodSugar" layoutX="308.0" layoutY="110.0" />
+                  <Label layoutX="173.0" layoutY="60.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Cholesterol Level:" />
+                  <Label layoutX="187.0" layoutY="85.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Pressure:" />
+                  <Label layoutX="203.0" layoutY="110.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Blood Sugar:" />
+                  <Label fx:id="value_cholesterolLevel" layoutX="289.0" layoutY="59.0" text="20num" />
+                  <Label fx:id="value_bloodPressure" layoutX="289.0" layoutY="85.0" text="20num" />
+                  <Label fx:id="value_bloodSugar" layoutX="289.0" layoutY="110.0" text="20num" />
                   <Label layoutX="23.0" layoutY="14.0" prefHeight="50.0" prefWidth="86.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Most recent checkup:" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Rectangle fx:id="rectangle_cholesterol" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="362.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
-                  <Rectangle fx:id="rectangle_bloodPressure" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="362.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
-                  <Rectangle fx:id="rectangle_bloodSugar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="362.0" layoutY="111.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
+                  <Rectangle fx:id="rectangle_cholesterol" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="385.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
+                  <Rectangle fx:id="rectangle_bloodPressure" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="385.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
+                  <Rectangle fx:id="rectangle_bloodSugar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="18.0" layoutX="385.0" layoutY="111.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
                   <Line endX="536.0" layoutX="144.0" layoutY="151.0" startX="-100.0" />
                   <Button fx:id="button_home1" layoutX="371.0" layoutY="466.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddNewButtonClick" prefHeight="40.0" prefWidth="150.0" styleClass="btn" text="Add New Record" textFill="WHITE" />
                   <Button fx:id="button_home11" layoutX="539.0" layoutY="466.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDeleteSelected" prefHeight="40.0" prefWidth="150.0" styleClass="btn" text="Delete Selected" textFill="WHITE" />
@@ -263,8 +263,8 @@
                   <Label layoutX="44.0" layoutY="408.0" prefHeight="27.0" prefWidth="94.0" text="Cholesterol " />
                   <Label layoutX="23.0" layoutY="439.0" prefHeight="27.0" prefWidth="94.0" text="Blood Pressure" />
                   <Label layoutX="36.0" layoutY="473.0" prefHeight="27.0" prefWidth="94.0" text="Blood Sugar" />
-                  <TextArea fx:id="value_doctorsComment" editable="false" layoutX="411.0" layoutY="52.0" prefHeight="82.0" prefWidth="256.0" />
-                  <Label layoutX="411.0" layoutY="21.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Doctor's Comments">
+                  <TextArea fx:id="value_doctorsComment" editable="false" layoutX="423.0" layoutY="52.0" prefHeight="82.0" prefWidth="256.0" />
+                  <Label layoutX="423.0" layoutY="21.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Doctor's Comments">
                      <font>
                         <Font size="14.0" />
                      </font>

@@ -225,11 +225,11 @@
                   <DatePicker fx:id="date_selection" editable="false" layoutX="186.0" layoutY="42.0" promptText="Select a date to query" styleClass="datePicker" stylesheets="@../css/stylesheet.css" />
                   <Button fx:id="button_getData" layoutX="418.0" layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGetDataButtonClick" prefHeight="40.0" prefWidth="86.0" styleClass="btn" text="Get Data" textFill="WHITE" />
                   <Line endX="521.0" layoutX="156.0" layoutY="96.0" startX="-100.0" stroke="#333645" />
-                  <Label layoutX="110.0" layoutY="181.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Weight" textFill="WHITE">
+                  <Label layoutX="107.0" layoutY="181.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Weight" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label layoutX="318.0" layoutY="181.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Height" textFill="WHITE">
+                  <Label layoutX="253.0" layoutY="180.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Height" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
@@ -254,7 +254,7 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Label layoutX="538.0" layoutY="181.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="BMI" textFill="WHITE">
+                  <Label layoutX="411.0" layoutY="180.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="BMI" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
@@ -271,13 +271,13 @@
                   <Rectangle fx:id="rectangle_stepCount" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="17.0" layoutX="422.0" layoutY="376.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
                   <Rectangle fx:id="rectangle_stairCount" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="17.0" layoutX="422.0" layoutY="420.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
                   <Rectangle fx:id="rectangle_restingHeartRate" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="17.0" layoutX="422.0" layoutY="465.0" stroke="BLACK" strokeType="INSIDE" width="17.0" />
-                  <Label fx:id="value_weight" layoutX="130.0" layoutY="213.0" text="xxx" textFill="WHITE" />
-                  <Label fx:id="value_height" layoutX="336.0" layoutY="213.0" text="xxx" textFill="WHITE" />
-                  <Label fx:id="value_bmi" layoutX="544.0" layoutY="213.0" text="xxx" textFill="WHITE" />
+                  <Label fx:id="value_weight" layoutX="127.0" layoutY="213.0" text="xxx" textFill="WHITE" />
+                  <Label fx:id="value_height" layoutX="271.0" layoutY="212.0" text="xxx" textFill="WHITE" />
+                  <Label fx:id="value_bmi" layoutX="417.0" layoutY="212.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_fatMass" layoutX="129.0" layoutY="298.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_leanMass" layoutX="335.0" layoutY="298.0" text="xxx" textFill="WHITE" />
                   <Label fx:id="value_bodyFat" layoutX="543.0" layoutY="298.0" text="xxx" textFill="WHITE" />
-                  <PieChart fx:id="bmi_chart" labelLineLength="40.0" layoutX="463.0" layoutY="336.0" prefHeight="186.0" prefWidth="216.0" title="Body Fat Ratio" />
+                  <PieChart fx:id="bmi_chart" labelLineLength="40.0" layoutX="453.0" layoutY="336.0" prefHeight="186.0" prefWidth="262.0" title="Body Fat Ratio" />
                   <Label fx:id="value_stepCount" layoutX="187.0" layoutY="377.0" text="xxx" />
                   <Label fx:id="value_stairCount" layoutX="187.0" layoutY="421.0" text="xxx" />
                   <Label fx:id="value_heartRate" layoutX="187.0" layoutY="466.0" text="xxx" />
@@ -290,6 +290,12 @@
                   <Label fx:id="achievment_stepCount" layoutX="335.0" layoutY="377.0" text="xxx" />
                   <Label fx:id="achievment_stairCount" layoutX="335.0" layoutY="421.0" text="xxx" />
                   <Label fx:id="achievment_restingHeartRate" layoutX="335.0" layoutY="466.0" text="xxx" />
+                  <Label layoutX="544.0" layoutY="180.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="BMR" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="value_bmr" layoutX="550.0" layoutY="212.0" text="xxx" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children></VBox>

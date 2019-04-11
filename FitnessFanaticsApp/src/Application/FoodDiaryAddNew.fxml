@@ -231,12 +231,12 @@
                   <RadioButton fx:id="input_lunch" layoutX="450.0" layoutY="319.0" mnemonicParsing="false" text="Lunch" toggleGroup="$input_mealTime" />
                   <RadioButton fx:id="input_dinner" layoutX="450.0" layoutY="345.0" mnemonicParsing="false" text="Dinner" toggleGroup="$input_mealTime" />
                   <RadioButton fx:id="input_snack" layoutX="450.0" layoutY="371.0" mnemonicParsing="false" text="Snack" toggleGroup="$input_mealTime" />
-                  <Spinner fx:id="input_carbs" layoutX="452.0" layoutY="134.0" />
-                  <Spinner fx:id="input_fats" layoutX="452.0" layoutY="173.0" />
-                  <Spinner fx:id="input_proteins" layoutX="452.0" layoutY="211.0" />
-                  <Label layoutX="393.0" layoutY="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Carbs" />
-                  <Label layoutX="398.0" layoutY="178.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Fats" />
-                  <Label layoutX="389.0" layoutY="216.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Protein" />
+                  <Spinner fx:id="input_carbs" editable="true" layoutX="468.0" layoutY="134.0" />
+                  <Spinner fx:id="input_fats" editable="true" layoutX="468.0" layoutY="173.0" />
+                  <Spinner fx:id="input_proteins" editable="true" layoutX="468.0" layoutY="211.0" />
+                  <Label layoutX="393.0" layoutY="139.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Carbs (g)" />
+                  <Label layoutX="404.0" layoutY="178.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Fats (g)" />
+                  <Label layoutX="389.0" layoutY="216.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Protein (g)" />
                   <Label layoutX="398.0" layoutY="294.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Meal" />
                   <TextField fx:id="input_description" layoutX="148.0" layoutY="130.0" prefHeight="112.0" prefWidth="212.0" promptText="Add a Description!" />
                   <Button fx:id="button_backToFoodDiary" layoutX="37.0" layoutY="459.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onBackToFoodDiaryClick" prefHeight="40.0" prefWidth="139.0" styleClass="btn" text="Back to Food Diary" textFill="WHITE" />

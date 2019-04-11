@@ -274,7 +274,7 @@
                   <Button layoutX="96.0" layoutY="132.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sleepMinusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="-" textFill="WHITE" />
                   <Button layoutX="191.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#gymPlusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="+" textFill="WHITE" />
                   <Button layoutX="96.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#gymMinusButtonClick" prefHeight="27.0" prefWidth="29.0" styleClass="btn" text="-" textFill="WHITE" />
-                  <PieChart fx:id="chart_timeAllocation" layoutX="468.0" layoutY="110.0" prefHeight="135.0" prefWidth="147.0" title="Time Allocation" />
+                  <PieChart fx:id="chart_timeAllocation" layoutX="468.0" layoutY="110.0" prefHeight="150.0" prefWidth="245.0" title="Time Allocation" />
                   <Button layoutX="481.0" layoutY="476.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewEntryButton" prefHeight="27.0" prefWidth="52.0" styleClass="btn" text="+" textFill="WHITE" />
                   <TextField fx:id="input_description" layoutX="42.0" layoutY="477.0" prefHeight="27.0" prefWidth="185.0" promptText="Exercise Description" />
                   <Spinner fx:id="input_time" editable="true" layoutX="397.0" layoutY="476.0" prefHeight="27.0" prefWidth="73.0" />

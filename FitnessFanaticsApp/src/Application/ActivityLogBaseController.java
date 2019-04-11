@@ -60,9 +60,12 @@ public class ActivityLogBaseController extends ActivityLogController {
 
     private ObservableList<PieChart.Data> getTimeChartData(double aerobicExerciseTime, double resistanceExerciseTime, double mentalExerciseTime, double sleepTime, double gymTime) {
         ObservableList<PieChart.Data> answer = FXCollections.observableArrayList();
+        double unallocated = 1440 - (aerobicExerciseTime + resistanceExerciseTime + mentalExerciseTime + sleepTime + gymTime);
+        if (unallocated < 0) unallocated = 0;
         answer.addAll(new PieChart.Data("Resistance", aerobicExerciseTime),
                 new PieChart.Data("Aerobic", resistanceExerciseTime),
                 new PieChart.Data("Mental", mentalExerciseTime),
+                new PieChart.Data("Unallocated", unallocated),
                 new PieChart.Data("Sleep", sleepTime),
                 new PieChart.Data("Gym", gymTime));
         return answer;

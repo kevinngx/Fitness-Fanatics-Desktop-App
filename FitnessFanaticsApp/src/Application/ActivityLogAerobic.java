@@ -118,7 +118,7 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
             populateTable();
             label_warningMessage.setTextFill(Color.GREEN);
             label_warningMessage.setText("Row Deleted");
-
+            refreshLabels();
         } catch (Exception e) {
             System.out.println("ERROR");
             label_warningMessage.setTextFill(Color.RED);

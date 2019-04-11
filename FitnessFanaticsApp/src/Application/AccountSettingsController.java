@@ -128,7 +128,7 @@ public class AccountSettingsController extends ApplicationBase {
         SpinnerValueFactory<Double> stairCountValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 1000000000, stairCount);
         this.input_stairCount.setValueFactory(stairCountValueFactory);
 
-        SpinnerValueFactory<Double> caloricIntakeValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 1000000000, caloricIntake);
+        SpinnerValueFactory<Double> caloricIntakeValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(-100000, 100000, caloricIntake);
         this.input_caloricIntake.setValueFactory(caloricIntakeValueFactory);
 
         SpinnerValueFactory<Double> sleepTimeValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 1000000000, sleepTime);

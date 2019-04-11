@@ -1,5 +1,7 @@
 package sample;
 
+import java.time.LocalDate;
+
 public class User {
 
     private int id;
@@ -137,4 +139,8 @@ public class User {
                 '}';
     }
 
+    public double calculateBasalMetabolicRate() {
+        double age = ((double) SessionDataHolder.getDateRequested() -  (double) dateOfBirth) / 10000.0;
+        return 655 + (9.6 * weight) + (1.8 * height) + (4.7 * age);
+    }
 }

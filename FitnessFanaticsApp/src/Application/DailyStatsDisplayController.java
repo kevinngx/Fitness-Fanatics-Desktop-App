@@ -21,6 +21,7 @@ public class DailyStatsDisplayController extends DailyStatsController {
     @FXML Label value_height;
     @FXML Label value_weight;
     @FXML Label value_bmi;
+    @FXML Label value_bmr;
     @FXML Label value_fatMass;
     @FXML Label value_leanMass;
     @FXML Label value_bodyFat;
@@ -48,8 +49,12 @@ public class DailyStatsDisplayController extends DailyStatsController {
         setupHeaders("Daily Stats - Summary");
         value_height.setText(Double.toString(SessionDataHolder.dailyData.getHeight()));
         value_weight.setText(Double.toString(SessionDataHolder.dailyData.getWeight()));
-        String bmi = String.format("%.2f", calculateBodyMassIndex());
+        String bmi = String.format("%.2f", calculateDailyBodyMassIndex());
         value_bmi.setText(bmi);
+        System.out.println("About to calc BMR");
+        String bmr = String.format("%.2f", SessionDataHolder.user.calculateBasalMetabolicRate());
+        value_bmr.setText(bmr);
+        System.out.println("BMR CALCULATED");
         String fatMass = String.format("%.2f", calculateLeanMass());
         value_fatMass.setText(fatMass);
         String leanMass = String.format("%.2f", calculateFatMass());
@@ -65,7 +70,17 @@ public class DailyStatsDisplayController extends DailyStatsController {
         //TODO: Set color scales for step counts
     }
 
-    private double calculateBodyMassIndex() {
+    private double calculateBasalMetabolicRate() {
+
+        System.out.println(SessionDataHolder.getDateRequested());
+        System.out.println(SessionDataHolder.user.getDateOfBirth());
+
+        double age = ((double) SessionDataHolder.getDateRequested() -  (double) SessionDataHolder.user.getDateOfBirth()) / 10000.0;
+        return 655 + (9.6 * SessionDataHolder.user.getWeight()) + (1.8 * SessionDataHolder.user.getHeight()) + (4.7 * age);
+
+    }
+
+    private double calculateDailyBodyMassIndex() {
         return (SessionDataHolder.dailyData.getWeight() / Math.pow(SessionDataHolder.dailyData.getHeight()/100, 2));
     }
 

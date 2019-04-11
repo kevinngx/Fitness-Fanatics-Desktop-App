@@ -27,6 +27,19 @@ public class DateHelper {
 
     }
 
+    public static String longDateToStringWithoutYear(long date) {
+
+        char[] dateArray = Long.toString(date).toCharArray();
+        StringBuilder sb = new StringBuilder();
+        sb.append(dateArray[6]);
+        sb.append(dateArray[7]);
+        sb.append("/");
+        sb.append(dateArray[4]);
+        sb.append(dateArray[5]);
+        return sb.toString();
+
+    }
+
     public static long inputStringToLongDate(String dateString) {
         System.out.println("Input: " + dateString);
         // We want yyyyMMdd
@@ -45,6 +58,8 @@ public class DateHelper {
         return Long.parseLong(sb.toString());
 
     }
+
+
 
     public static long getCurrentDate() {
 

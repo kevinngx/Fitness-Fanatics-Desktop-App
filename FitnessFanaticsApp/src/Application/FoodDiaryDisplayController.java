@@ -106,7 +106,7 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
                 calories += getAmount(Macronutrient.CARBS) * 4;
                 break;
             case FATS:
-                calories += getAmount(Macronutrient.FATS) * 4;
+                calories += getAmount(Macronutrient.FATS) * 9;
                 break;
             case PROTEINS:
                 calories += getAmount(Macronutrient.PROTEINS) * 4;
