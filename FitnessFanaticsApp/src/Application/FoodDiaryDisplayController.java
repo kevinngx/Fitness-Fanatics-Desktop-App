@@ -1,25 +1,23 @@
 package Application;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
-import sample.DateHelper;
 import sample.FoodIntake;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+//-----------------------------------------------------------------
 
 public class FoodDiaryDisplayController extends FoodDiaryController {
 
@@ -54,6 +52,8 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
     @FXML TableView<FoodIntake> table_summary;
 
     @FXML private PieChart macronutrient_chart;
+
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {
@@ -203,6 +203,9 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
         table_summary.setItems(data);
     }
 
+
+//-----------------------------------------------------------------
+
     @FXML
     public void onGetAllData(ActionEvent event) throws IOException {
         System.out.println(TAG + "Getting all data for this date");
@@ -261,7 +264,6 @@ public class FoodDiaryDisplayController extends FoodDiaryController {
         System.out.println(TAG + "Adding new meal item");
         pageSwitcherHelper.switcher(event, "../Application/FoodDiaryAddNew.fxml");
     }
-
 
     @FXML
     public void onGetVegesButtonClick(ActionEvent event) throws IOException {

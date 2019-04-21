@@ -16,14 +16,12 @@ import java.time.LocalDate;
 public class ApplicationBase {
 
     PageSwitcherHelper pageSwitcherHelper = new PageSwitcherHelper();
-
     Database database = new Database();
 
-    @FXML
-    private Label page_title;
-
+    @FXML private Label page_title;
     @FXML Label current_user;
 
+//-----------------------------------------------------------------
 
     @FXML
     public void onLogoutButtonClick(ActionEvent event) throws IOException {

@@ -5,16 +5,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import sample.Database;
-import sample.DateHelper;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
+//-----------------------------------------------------------------
 
 public class ActivityLogBaseController extends ActivityLogController {
 
@@ -30,6 +29,7 @@ public class ActivityLogBaseController extends ActivityLogController {
 
     @FXML private PieChart chart_timeAllocation;
 
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {
@@ -112,6 +112,8 @@ public class ActivityLogBaseController extends ActivityLogController {
 
         return totalTime;
     }
+
+//-----------------------------------------------------------------
 
     @FXML
     public void sleepMinusButtonClick(ActionEvent event) throws IOException {
@@ -281,6 +283,5 @@ public class ActivityLogBaseController extends ActivityLogController {
     public void MentalExerciseButtonClick(ActionEvent event) throws IOException {
         pageSwitcherHelper.switcher(event, "../Application/ActivityLogMental.fxml");
     }
-
 
 }

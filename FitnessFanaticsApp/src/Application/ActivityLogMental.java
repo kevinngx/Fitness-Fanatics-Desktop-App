@@ -7,16 +7,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
-import sample.FoodIntake;
 import sample.MentalExercise;
-import sample.ResistanceExercise;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+//-----------------------------------------------------------------
 
 public class ActivityLogMental extends ActivityLogBaseController {
 
@@ -31,6 +30,8 @@ public class ActivityLogMental extends ActivityLogBaseController {
     @FXML TableColumn<MentalExercise, String> column_time;
 
     @FXML TableView<MentalExercise> table_summary;
+
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {
@@ -47,15 +48,14 @@ public class ActivityLogMental extends ActivityLogBaseController {
         }
 
         populateTable();
-
     }
 
     private void populateTable() {
         ArrayList<MentalExercise> exerciseList = new ArrayList<>();
-
         String query = String.format("SELECT * FROM Mental_Exercise " +
                         "WHERE (userId = %s AND date = %s)", SessionDataHolder.user.getId(),
                 SessionDataHolder.getDateRequested());
+
         try {
             ResultSet rs = database.getResultSet(query);
             while (rs.next()) {
@@ -73,7 +73,6 @@ public class ActivityLogMental extends ActivityLogBaseController {
             e.printStackTrace();
         }
 
-
         column_exercise.setCellValueFactory(new PropertyValueFactory<>("exercise"));
         column_emotionalRating.setCellValueFactory(new PropertyValueFactory<>("emotionalRating"));
         column_time.setCellValueFactory(new PropertyValueFactory<>("timeTaken"));
@@ -82,9 +81,7 @@ public class ActivityLogMental extends ActivityLogBaseController {
         data.addAll(exerciseList);
 
         table_summary.setItems(data);
-
     }
-
 
     @FXML
     public void addNewEntryButton(ActionEvent event) throws IOException, SQLException {

@@ -1,6 +1,5 @@
 package Application;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,14 +7,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.paint.Color;
-import sample.AerobicExercise;
 import sample.Database;
 import sample.DateHelper;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+//-----------------------------------------------------------------
 
 public class AccountSettingsController extends ApplicationBase {
 
@@ -55,6 +54,7 @@ public class AccountSettingsController extends ApplicationBase {
 
     @FXML Label label_passwordMessage;
 
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {
@@ -112,7 +112,6 @@ public class AccountSettingsController extends ApplicationBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     private void setGoalValues(double stepCount, double stairCount, double caloricIntake, double sleepTime, double gymTime) {

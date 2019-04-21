@@ -5,14 +5,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import sample.DateHelper;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.time.LocalDate;
+
+//-----------------------------------------------------------------
 
 public class ActivityLogController extends ApplicationBase {
 
     @FXML DatePicker date_selection;
+
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {

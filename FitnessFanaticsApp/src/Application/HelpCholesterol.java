@@ -3,11 +3,7 @@ package Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import sample.AerobicExercise;
-import sample.PageSwitcherHelper;
-
 import java.io.IOException;
 
 public class HelpCholesterol {

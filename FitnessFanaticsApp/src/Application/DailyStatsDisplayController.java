@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import sample.SessionDataHolder;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -43,6 +42,8 @@ public class DailyStatsDisplayController extends DailyStatsController {
 
     @FXML private PieChart bmi_chart;
 
+//-----------------------------------------------------------------
+
     @FXML
     public void initialize() throws SQLException {
         date_selection.setValue(LocalDate.now());
@@ -67,6 +68,8 @@ public class DailyStatsDisplayController extends DailyStatsController {
         bmi_chart.setData(getBmiChartData());
         setColorScales();
     }
+
+//-----------------------------------------------------------------
 
     private double calculateBasalMetabolicRate() {
 

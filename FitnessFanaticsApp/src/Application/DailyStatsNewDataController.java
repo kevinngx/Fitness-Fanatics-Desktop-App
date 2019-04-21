@@ -6,20 +6,23 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import sample.DailyData;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.SQLException;
+
+//-----------------------------------------------------------------
 
 public class DailyStatsNewDataController extends DailyStatsController {
 
     private static final String TAG = "DailyStatsNewDataContro: ";
 
-    @FXML private Spinner input_weight;
-    @FXML private Spinner input_height;
-    @FXML private Spinner input_bodyFatPercentage;
+    @FXML private Spinner input_weight; // Double
+    @FXML private Spinner input_height; // Double
+    @FXML private Spinner input_bodyFatPercentage; // Double
     @FXML private Spinner input_stepCount; // Int
     @FXML private Spinner input_stairCount; // Int
     @FXML private Spinner input_restingHeartRate; // Int
+
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() throws SQLException {
@@ -44,10 +47,6 @@ public class DailyStatsNewDataController extends DailyStatsController {
         SpinnerValueFactory<Integer> heartRateFatPercentageValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000, 80);
         this.input_restingHeartRate.setValueFactory(heartRateFatPercentageValueFactory);
     }
-//
-//    newUser.setGender(selectedGender.getText());
-//    newUser.setHeight((Double) input_height.getValue());
-//    newUser.setWeight((Double) input_weight.getValue());
 
     @FXML
     public void onAddRecordButtonClick(ActionEvent event) throws IOException, SQLException {

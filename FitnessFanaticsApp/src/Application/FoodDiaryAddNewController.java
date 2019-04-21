@@ -3,12 +3,12 @@ package Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import sample.DateHelper;
 import sample.FoodIntake;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.SQLException;
+
+//-----------------------------------------------------------------
 
 public class FoodDiaryAddNewController extends FoodDiaryController {
 
@@ -21,7 +21,7 @@ public class FoodDiaryAddNewController extends FoodDiaryController {
     @FXML Spinner input_fats;
     @FXML Spinner input_proteins;
 
-
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {
@@ -37,15 +37,10 @@ public class FoodDiaryAddNewController extends FoodDiaryController {
         SpinnerValueFactory<Double> bodyFatPercentageValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 100000.0, 0);
         this.input_proteins.setValueFactory(bodyFatPercentageValueFactory);
 
-
     }
 
     @FXML
     public void onAddNewFoodItemClick(ActionEvent event) throws IOException {
-
-//        RadioButton selectedGender = (RadioButton) input_gender.getSelectedToggle();
-//        newUser.setGender(selectedGender.getText());
-
         RadioButton selectedMealTime = (RadioButton) input_mealTime.getSelectedToggle();
         RadioButton selectedFoodGroup= (RadioButton) input_foodGroup.getSelectedToggle();
 
@@ -73,7 +68,5 @@ public class FoodDiaryAddNewController extends FoodDiaryController {
     public void onBackToFoodDiaryClick(ActionEvent event) throws IOException {
         pageSwitcherHelper.switcher(event, "../Application/FoodDiaryDisplay.fxml");
     }
-
-
 
 }

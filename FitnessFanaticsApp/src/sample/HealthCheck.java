@@ -101,6 +101,7 @@ public class HealthCheck {
                 '}';
     }
 
+    // This method will save the specific instance into the database
     public void createDatabaseRecord() throws SQLException {
         String query = String.format("INSERT INTO \"Health_Check\" (\"userId\",\"date\",\"cholesterolLevel\",\"bloodPressure\",\"bloodSugar\",\"doctorsComment\") " +
                         "VALUES (%s,%s,%s,%s,%s,'%s');",

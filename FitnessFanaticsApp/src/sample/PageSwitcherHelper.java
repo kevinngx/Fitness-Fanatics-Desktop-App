@@ -11,6 +11,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/***************************************************************************************
+ *    This code was taken from the tutorial 3B of INFS2605, as provided on the Edsetem website
+ *    It is a helper class that is used to switch between different scenes
+ ***************************************************************************************/
+
 public class PageSwitcherHelper {
 
     public void switcher(ActionEvent event, String page) throws IOException {

@@ -8,15 +8,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import sample.AerobicExercise;
-import sample.FoodIntake;
-import sample.MentalExercise;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+//-----------------------------------------------------------------
 
 public class ActivityLogAerobic extends ActivityLogBaseController {
 
@@ -32,6 +31,8 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
 
     @FXML TableView<AerobicExercise> table_summary;
 
+//-----------------------------------------------------------------
+
     @FXML
     public void initialize() {
         setupHeaders("Activity - Aerobic Exercises");
@@ -39,7 +40,6 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
 
         SpinnerValueFactory<Integer> timeValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100000, 0);
         this.input_time.setValueFactory(timeValueFactory);
-
         SpinnerValueFactory<Integer> distanceValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100000, 0);
         this.input_distance.setValueFactory(distanceValueFactory);
 
@@ -50,7 +50,6 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
         }
 
         populateTable();
-
     }
 
     private void populateTable() {
@@ -76,7 +75,6 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
             e.printStackTrace();
         }
 
-
         column_exercise.setCellValueFactory(new PropertyValueFactory<>("exercise"));
         column_distance.setCellValueFactory(new PropertyValueFactory<>("distance"));
         column_time.setCellValueFactory(new PropertyValueFactory<>("time"));
@@ -85,7 +83,6 @@ public class ActivityLogAerobic extends ActivityLogBaseController {
         data.addAll(exerciseList);
 
         table_summary.setItems(data);
-
     }
 
     @FXML

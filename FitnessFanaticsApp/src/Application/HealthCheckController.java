@@ -9,7 +9,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import sample.*;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,6 +46,8 @@ public class HealthCheckController extends ApplicationBase {
     @FXML TableColumn<HealthCheck, String> column_doctorsComment;
 
     @FXML TableView<HealthCheck> table_summary;
+
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {
@@ -97,7 +98,7 @@ public class HealthCheckController extends ApplicationBase {
             value_date.setText(dataSet.get(0).getDateString());
             value_cholesterolLevel.setText(Double.toString(dataSet.get(0).getCholesterolLevel()) + "mg/dL");
             value_bloodPressure.setText(Double.toString(dataSet.get(0).getBloodPressure()) + "mmHg");
-            value_bloodSugar.setText(Double.toString(dataSet.get(0).getBloodPressure()) + "mmol/L");
+            value_bloodSugar.setText(Double.toString(dataSet.get(0).getBloodSugar()) + "mmol/L");
             value_doctorsComment.setText(dataSet.get(0).getDoctorsComment());
             setColorScales();
         } else {
@@ -116,7 +117,7 @@ public class HealthCheckController extends ApplicationBase {
         } else if (dataSet.get(0).getCholesterolLevel() < 240) {
             rectangle_cholesterol.setFill(Color.YELLOW);
         } else {
-            rectangle_cholesterol.setFill(Color.YELLOW);
+            rectangle_cholesterol.setFill(Color.RED);
         }
 
         // Blood Pressure
@@ -168,6 +169,8 @@ public class HealthCheckController extends ApplicationBase {
         }
         return dataSet;
     }
+
+//-----------------------------------------------------------------
 
     @FXML
     public void onDeleteSelected(ActionEvent event) {

@@ -7,22 +7,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.paint.Color;
-import sample.FoodIntake;
 import sample.ResistanceExercise;
 import sample.SessionDataHolder;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+//-----------------------------------------------------------------
+
 public class ActivityLogResistance extends ActivityLogBaseController {
 
-    private static final String TAG = "ActivityLogResistance: ";
-
     @FXML Label label_warningMessage;
-
     @FXML TextField input_description;
     @FXML private Spinner input_mass;
     @FXML private Spinner input_sets;
@@ -34,6 +31,8 @@ public class ActivityLogResistance extends ActivityLogBaseController {
     @FXML TableColumn<ResistanceExercise, String> column_time;
 
     @FXML TableView<ResistanceExercise> table_summary;
+
+//-----------------------------------------------------------------
 
     @FXML
     public void initialize() {
@@ -60,10 +59,10 @@ public class ActivityLogResistance extends ActivityLogBaseController {
 
     private void populateTable() {
         ArrayList<ResistanceExercise> exerciseList = new ArrayList<>();
-
         String query = String.format("SELECT * FROM Resistance_Exercise " +
                 "WHERE (userId = %s AND date = %s)", SessionDataHolder.user.getId(),
                 SessionDataHolder.getDateRequested());
+
         try {
             ResultSet rs = database.getResultSet(query);
             while (rs.next()) {

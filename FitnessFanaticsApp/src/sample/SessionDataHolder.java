@@ -2,6 +2,13 @@ package sample;
 
 import java.sql.ResultSet;
 
+/***************************************************************************************
+ *    This is a helper class that contains a number of static variables which were accessible
+ *    across the entire application. It was used to hold 'session data' such as the
+ *    current user and the current date requested which were passed into page fields
+ *    on startup.
+ ***************************************************************************************/
+
 public class SessionDataHolder {
 
     public static User user = getDefaultUser();
@@ -27,6 +34,7 @@ public class SessionDataHolder {
         SessionDataHolder.dateRequested = dateRequested;
     }
 
+    // Default class used during development when bypassing login screen
     private static User getDefaultUser() {
         // This will set up a default user for testing purposes
         User defaultUser = new User();

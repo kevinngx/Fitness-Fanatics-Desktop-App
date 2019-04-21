@@ -250,10 +250,10 @@
                   <Button fx:id="button_home11" layoutX="539.0" layoutY="466.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDeleteSelected" prefHeight="40.0" prefWidth="150.0" styleClass="btn" text="Delete Selected" textFill="WHITE" />
                   <TextArea fx:id="input_doctorsComment" layoutX="370.0" layoutY="371.0" prefHeight="82.0" prefWidth="318.0" promptText="Doctor's assessment, instructions and any other additional relevant information" />
                   <Label layoutX="293.0" layoutY="356.0" prefHeight="72.0" prefWidth="72.0" text="Doctor's Comment" wrapText="true" />
-                  <Spinner fx:id="input_cholesterolLevel" layoutX="136.0" layoutY="405.0" prefHeight="27.0" prefWidth="132.0" />
+                  <Spinner fx:id="input_cholesterolLevel" editable="true" layoutX="136.0" layoutY="405.0" prefHeight="27.0" prefWidth="132.0" />
                   <DatePicker fx:id="input_date" layoutX="137.0" layoutY="371.0" prefHeight="27.0" prefWidth="132.0" />
-                  <Spinner fx:id="input_bloodPressure" layoutX="136.0" layoutY="439.0" prefHeight="27.0" prefWidth="132.0" />
-                  <Spinner fx:id="input_bloodSugar" layoutX="136.0" layoutY="473.0" prefHeight="27.0" prefWidth="132.0" />
+                  <Spinner fx:id="input_bloodPressure" editable="true" layoutX="136.0" layoutY="439.0" prefHeight="27.0" prefWidth="132.0" />
+                  <Spinner fx:id="input_bloodSugar" editable="true" layoutX="136.0" layoutY="473.0" prefHeight="27.0" prefWidth="132.0" />
                   <Label layoutX="83.0" layoutY="349.0" prefHeight="72.0" prefWidth="72.0" text="Date" />
                   <Label layoutX="23.0" layoutY="340.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Add new health check summary">
                      <font>

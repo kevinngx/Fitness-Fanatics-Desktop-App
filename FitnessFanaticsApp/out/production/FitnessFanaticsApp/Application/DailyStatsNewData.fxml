@@ -223,12 +223,12 @@
                   <Button fx:id="button_getData" layoutX="418.0" layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onGetDataButtonClick" prefHeight="40.0" prefWidth="86.0" styleClass="btn" text="Get Data" textFill="WHITE" />
                   <Line endX="521.0" layoutX="156.0" layoutY="96.0" startX="-100.0" stroke="#333645" />
                   <Button fx:id="button_addRecord" layoutX="534.0" layoutY="442.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddRecordButtonClick" prefHeight="40.0" prefWidth="139.0" styleClass="btn" text="Add Record" textFill="WHITE" />
-                  <Spinner fx:id="input_weight" layoutX="185.0" layoutY="236.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
-                  <Spinner fx:id="input_height" layoutX="185.0" layoutY="286.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
-                  <Spinner fx:id="input_bodyFatPercentage" layoutX="185.0" layoutY="336.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
-                  <Spinner fx:id="input_stepCount" layoutX="530.0" layoutY="237.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
-                  <Spinner fx:id="input_stairCount" layoutX="530.0" layoutY="286.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
-                  <Spinner fx:id="input_restingHeartRate" layoutX="530.0" layoutY="337.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
+                  <Spinner fx:id="input_weight" editable="true" layoutX="185.0" layoutY="236.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
+                  <Spinner fx:id="input_height" editable="true" layoutX="185.0" layoutY="286.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
+                  <Spinner fx:id="input_bodyFatPercentage" editable="true" layoutX="185.0" layoutY="336.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
+                  <Spinner fx:id="input_stepCount" editable="true" layoutX="530.0" layoutY="237.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
+                  <Spinner fx:id="input_stairCount" editable="true" layoutX="530.0" layoutY="286.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
+                  <Spinner fx:id="input_restingHeartRate" editable="true" layoutX="530.0" layoutY="337.0" prefHeight="27.0" prefWidth="121.0" stylesheets="@../css/stylesheet.css" />
                   <Label layoutX="42.0" layoutY="241.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Current Weight (kg)" />
                   <Label layoutX="41.0" layoutY="291.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Current Height (cm)" />
                   <Label layoutX="90.0" layoutY="341.0" styleClass="inputLabel" stylesheets="@../css/stylesheet.css" text="Body Fat %" />

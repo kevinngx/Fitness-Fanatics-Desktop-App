@@ -349,7 +349,7 @@ public class DashboardController extends ApplicationBase {
                         rs.getDouble(6),
                         rs.getString(7)
                 );
-                daysSinceLastHealthCheck = DateHelper.getCurrentDate() - latestHealthCheck.getDate();
+                daysSinceLastHealthCheck = DateHelper.getDaysInBetween(DateHelper.getCurrentDate(), latestHealthCheck.getDate());
                 System.out.println("Days since last check: " + Long.toString(daysSinceLastHealthCheck));
                 value_recentCheckup.setText(Long.toString(daysSinceLastHealthCheck) + " days");
                 value_cholesterolLevel.setText(Double.toString(latestHealthCheck.getCholesterolLevel()) + "mg/dL");

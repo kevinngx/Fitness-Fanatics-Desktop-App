@@ -2,6 +2,12 @@ package sample;
 
 import java.sql.*;
 
+/***************************************************************************************
+ *    This code was adapted from the tutorial 3B of INFS2605, as provided on the Edsetem website
+ *    It has been modified to meet the needs of our application
+ *    It is a helper class that is used to access our SQLite Database
+ ***************************************************************************************/
+
 public class Database {
 
     public static Connection conn;
@@ -16,22 +22,22 @@ public class Database {
         }
     }
 
-    public ResultSet getResultSet(String sqlstatement) throws SQLException {
+    public ResultSet getResultSet(String selectQuery) throws SQLException {
         openConnection();
         Statement statement = conn.createStatement();
-        ResultSet RS = statement.executeQuery(sqlstatement);
-        return RS;
+        ResultSet resultSet = statement.executeQuery(selectQuery);
+        return resultSet;
     }
 
-    public void insertStatement(String insert_query) throws SQLException {
+    public void insertStatement(String insertQuery) throws SQLException {
         Statement statement = null;
         openConnection();
         conn.setAutoCommit(false);
         try {
             System.out.println("Database opened successfully");
             statement = conn.createStatement();
-            System.out.println("The query was: " + insert_query);
-            statement.executeUpdate(insert_query);
+            System.out.println("The query was: " + insertQuery);
+            statement.executeUpdate(insertQuery);
             System.out.println("Insertion successful!");
             statement.close();
             conn.commit();
