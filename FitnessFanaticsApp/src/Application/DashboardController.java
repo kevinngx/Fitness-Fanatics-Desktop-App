@@ -474,7 +474,7 @@ public class DashboardController extends ApplicationBase {
     public void onHelpHealthCheckButtonClick(ActionEvent event) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("../Application/HelpBloodPressure.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("../Application/HelpHealthCheck.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 259, 255);
             Stage stage = new Stage();
             stage.setTitle("Cholesterol Ratings");

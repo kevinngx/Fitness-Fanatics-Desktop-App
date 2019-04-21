@@ -193,7 +193,6 @@ public class HealthCheckController extends ApplicationBase {
 
     @FXML
     public void onAddNewButtonClick(ActionEvent event) throws IOException {
-        //TODO
 
         if (input_date.getValue() == null) {
             label_warningMessage.setTextFill(Color.RED);
