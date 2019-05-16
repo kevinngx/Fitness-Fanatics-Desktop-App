@@ -16,9 +16,9 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUp.SignUpScreenTwoController">
     <children>
-      <TextField fx:id="input_email" layoutX="228.0" layoutY="198.0" prefHeight="27.0" prefWidth="210.0" promptText="Username" />
-      <TextField fx:id="input_firstName" layoutX="228.0" layoutY="237.0" prefHeight="27.0" prefWidth="210.0" promptText="First Name" />
-      <TextField fx:id="input_lastName" layoutX="228.0" layoutY="275.0" prefHeight="27.0" prefWidth="210.0" promptText="Last Name" />
+      <TextField fx:id="input_email" layoutX="228.0" layoutY="198.0" prefHeight="27.0" prefWidth="210.0" promptText="john@fitness.com" />
+      <TextField fx:id="input_firstName" layoutX="228.0" layoutY="237.0" prefHeight="27.0" prefWidth="210.0" promptText="John" />
+      <TextField fx:id="input_lastName" layoutX="228.0" layoutY="275.0" prefHeight="27.0" prefWidth="210.0" promptText="Doe" />
         <Label fx:id="signupStatusLabel" layoutX="412.0" layoutY="455.0" prefHeight="17.0" prefWidth="350.0" />
       <Line endX="175.0" layoutX="231.0" layoutY="417.0" startX="-100.0" />
       <Circle fill="#00a2d3" layoutX="166.0" layoutY="417.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />

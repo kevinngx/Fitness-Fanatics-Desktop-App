@@ -15,7 +15,7 @@ public class Main extends Application {
 
 
         primaryStage.setTitle("Fitness Fanatics");
-        primaryStage.setScene(new Scene(root, 1000, 600));
+        primaryStage.setScene(new Scene(root, 1132, 613));
         primaryStage.show();
     }
 
